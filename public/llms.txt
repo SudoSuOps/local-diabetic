@@ -1,9 +1,11 @@
-# LocalDiabetic
+# LocalDiabetics
 
-LocalDiabetic is local diabetic support infrastructure: care packs, trusted vendors, reminders, family coordination, local vaults, and real-world help without harvesting diabetic data.
+LocalDiabetics is headquartered in Jupiter, Florida and operated by Swarmandbee LLC. LocalDiabetic is local diabetic support infrastructure: care packs, trusted vendors, reminders, family coordination, local vaults, and real-world help without harvesting diabetic data.
 
 Canonical site: https://localdiabetic.com
 Secondary domain: https://localdiabetic.org
 Contact: care@localdiabetic.com
+HQ: Jupiter, Florida
+Operator: Swarmandbee LLC
 
 LocalDiabetic does not provide medical advice, diagnosis, treatment, medication dosing, wound-care instructions, or emergency triage.

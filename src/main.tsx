@@ -29,7 +29,7 @@ function App() {
         <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8" aria-label="Main navigation">
           <a href="#top" className="flex items-center gap-3 rounded-2xl font-black text-[#073f3b]" aria-label="LocalDiabetic home">
             <span className="grid h-11 w-11 place-items-center rounded-2xl bg-[#f2b632] text-xl">LD</span>
-            <span className="text-xl">Local<span className="text-[#b98211]">Diabetic</span></span>
+            <span className="text-xl">Local<span className="text-[#b98211]">Diabetics</span></span>
           </a>
           <div className="hidden items-center gap-5 text-sm font-bold text-slate-700 lg:flex">
             <a href="#get-help" className="hover:text-[#0f766e]">Get help</a>
@@ -56,7 +56,7 @@ function App() {
             <div>
               <p className="inline-flex rounded-full border border-[#0f766e]/20 bg-white px-4 py-2 text-sm font-bold text-[#0f766e] shadow-sm">Local help. Human review. No data harvesting.</p>
               <h1 className="mt-6 max-w-5xl text-5xl font-black leading-[1.02] tracking-tight text-slate-950 sm:text-6xl lg:text-7xl">Local support for diabetic life.</h1>
-              <p className="mt-7 max-w-3xl text-xl leading-9 text-slate-700">LocalDiabetic turns privacy-first diabetic compute into real-world help: care packs, trusted vendors, reminders, family coordination, local vaults, and community support nodes.</p>
+              <p className="mt-7 max-w-3xl text-xl leading-9 text-slate-700">LocalDiabetics, headquartered in Jupiter, Florida and operated by Swarmandbee LLC, turns privacy-first diabetic compute into real-world help: care packs, trusted vendors, reminders, family coordination, local vaults, and community support nodes.</p>
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">
                 <a className="inline-flex min-h-12 items-center justify-center rounded-2xl bg-[#0f766e] px-7 py-3 font-black text-white shadow-lg shadow-teal-900/15 hover:bg-[#0b5f59]" href={`mailto:${CONTACT_EMAIL}?subject=LocalDiabetic%20Get%20Help`}>Get local help</a>
                 <a className="inline-flex min-h-12 items-center justify-center rounded-2xl border border-[#0f766e]/25 bg-white px-7 py-3 font-black text-[#07554f] hover:bg-teal-50" href={`mailto:${CONTACT_EMAIL}?subject=LocalDiabetic%20Pilot%20Partner`}>Start a local node</a>
@@ -125,8 +125,9 @@ function App() {
 
       <footer className="bg-[#041f1d] px-5 py-10 text-white sm:px-8">
         <div className="mx-auto max-w-7xl">
-          <p className="text-xl font-black">Local<span className="text-[#f2b632]">Diabetic</span></p>
-          <p className="mt-3 max-w-4xl text-sm leading-6 text-slate-300">LocalDiabetic provides organization, reminders, local resource coordination, care pack operations, and non-medical support. It does not provide medical advice, diagnosis, treatment, medication dosing, wound-care instructions, or emergency triage. For medical questions, contact licensed medical professionals. For emergencies, call emergency services.</p>
+          <p className="text-xl font-black">Local<span className="text-[#f2b632]">Diabetics</span></p>
+          <p className="mt-3 max-w-4xl text-sm leading-6 text-slate-300">LocalDiabetics is headquartered in Jupiter, Florida and operated by Swarmandbee LLC. LocalDiabetic provides organization, reminders, local resource coordination, care pack operations, and non-medical support. It does not provide medical advice, diagnosis, treatment, medication dosing, wound-care instructions, or emergency triage. For medical questions, contact licensed medical professionals. For emergencies, call emergency services.</p>
+          <p className="mt-3 text-sm text-slate-300">HQ: Jupiter, Florida · Operator: Swarmandbee LLC</p>
           <p className="mt-3 text-sm text-slate-300">Contact: <a className="font-semibold text-white underline underline-offset-4" href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a></p>
         </div>
       </footer>

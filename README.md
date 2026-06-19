@@ -1,6 +1,6 @@
-# LocalDiabetic
+# LocalDiabetics
 
-LocalDiabetic is local diabetic support infrastructure: care packs, trusted vendors, reminders, family coordination, local vaults, and real-world help without harvesting diabetic data.
+LocalDiabetics is the Jupiter, Florida HQ/community operating brand for local diabetic support infrastructure: care packs, trusted vendors, reminders, family coordination, local vaults, and real-world help without harvesting diabetic data.
 
 Domains:
 
@@ -8,10 +8,12 @@ Domains:
 - `localdiabetic.org`
 
 Contact email: `care@localdiabetic.com`
+HQ: Jupiter, Florida
+Operator: Swarmandbee LLC
 
 ## Relationship to OpenDiabetic
 
-OpenDiabetic Foundation is the privacy-first diabetic compute infrastructure side. LocalDiabetic is the real-world local deployment layer: human-in-the-loop support nodes, vendors, care packs, local vaults, and community operations.
+OpenDiabetic Foundation is the privacy-first diabetic compute infrastructure side. LocalDiabetics / LocalDiabetic is the real-world local deployment layer: human-in-the-loop support nodes, vendors, care packs, local vaults, and community operations.
 
 ## Safety
 
