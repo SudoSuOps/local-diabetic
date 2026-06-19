@@ -8,6 +8,7 @@ Domains:
 - `localdiabetic.org`
 
 Contact email: `care@localdiabetic.com`
+Phone: `561.532.7120`
 HQ: Jupiter, Florida
 Operator: Swarmandbee LLC
 

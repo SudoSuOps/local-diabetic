@@ -3,6 +3,8 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 
 const CONTACT_EMAIL = 'care@localdiabetic.com'
+const CONTACT_PHONE = '561.532.7120'
+const CONTACT_PHONE_TEL = '+15615327120'
 
 const paths = [
   ['People living with diabetes', 'Get a practical checklist, care-pack path, local resource map, and local vault plan.'],
@@ -128,7 +130,7 @@ function App() {
           <p className="text-xl font-black">Local<span className="text-[#f2b632]">Diabetics</span></p>
           <p className="mt-3 max-w-4xl text-sm leading-6 text-slate-300">LocalDiabetics is headquartered in Jupiter, Florida and operated by Swarmandbee LLC. LocalDiabetic provides organization, reminders, local resource coordination, care pack operations, and non-medical support. It does not provide medical advice, diagnosis, treatment, medication dosing, wound-care instructions, or emergency triage. For medical questions, contact licensed medical professionals. For emergencies, call emergency services.</p>
           <p className="mt-3 text-sm text-slate-300">HQ: Jupiter, Florida · Operator: Swarmandbee LLC</p>
-          <p className="mt-3 text-sm text-slate-300">Contact: <a className="font-semibold text-white underline underline-offset-4" href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a></p>
+          <p className="mt-3 text-sm text-slate-300">Contact: <a className="font-semibold text-white underline underline-offset-4" href={"mailto:" + CONTACT_EMAIL}>{CONTACT_EMAIL}</a><span className="px-2 text-slate-500">|</span><a className="font-semibold text-white underline underline-offset-4" href={"tel:" + CONTACT_PHONE_TEL}>{CONTACT_PHONE}</a></p>
         </div>
       </footer>
     </div>
