@@ -1,0 +1,12 @@
+Timeline,Task,Owner Role,Dependency,Cost,Risk,Success Metric,Priority
+"Week 1","Define pilot boundaries","Founder/Ops","none","$0","scope creep","signed pilot charter","P0"
+"Week 1","Build Palm Beach partner list","Ops","none","$0","bad data","50 targets","P0"
+"Week 1","Draft intake forms and disclaimers","Ops/Legal reviewer","pilot charter","$0-$500","legal gaps","approved forms","P0"
+"Week 2","Recruit church/community host","Founder","partner list","$0","low trust","1 host LOI","P0"
+"Week 2","Recruit podiatry/wound-care advisor","Founder","partner list","$0","medical boundary","1 advisor","P0"
+"Week 2","Assemble 10 MVP care packs","Ops/Volunteer","pack matrix","$350-$900","wrong items","10 packs ready","P0"
+"Week 3","Launch LocalDiabetic landing page","Dev","copy/forms","$0-$100","unclear CTA","page live","P0"
+"Week 3","Onboard first 5 vendors","Ops","vendor checklist","$0","unvetted vendor","5 vetted listings","P1"
+"Week 4","Run first local help session","Ops/Volunteers","host + packs","$100-$300","medical questions","10 attendees","P1"
+"Days 31-60","Serve first 25 requests","Care desk","intake live","$500-$2500","overload","25 safe outcomes","P1"
+"Days 61-90","Publish impact report","Ops","request data","$0","overclaiming","public report","P1"
