@@ -7,7 +7,7 @@ Domains:
 - `localdiabetic.com`
 - `localdiabetic.org`
 
-Contact email: `build@localdiabetic.com`
+Contact email: `care@localdiabetic.com`
 
 ## Relationship to OpenDiabetic
 

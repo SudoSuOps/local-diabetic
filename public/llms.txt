@@ -4,6 +4,6 @@ LocalDiabetic is local diabetic support infrastructure: care packs, trusted vend
 
 Canonical site: https://localdiabetic.com
 Secondary domain: https://localdiabetic.org
-Contact: build@localdiabetic.com
+Contact: care@localdiabetic.com
 
 LocalDiabetic does not provide medical advice, diagnosis, treatment, medication dosing, wound-care instructions, or emergency triage.

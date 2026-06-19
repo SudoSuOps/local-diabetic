@@ -2,7 +2,7 @@ import React from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 
-const CONTACT_EMAIL = 'build@localdiabetic.com'
+const CONTACT_EMAIL = 'care@localdiabetic.com'
 
 const paths = [
   ['People living with diabetes', 'Get a practical checklist, care-pack path, local resource map, and local vault plan.'],
