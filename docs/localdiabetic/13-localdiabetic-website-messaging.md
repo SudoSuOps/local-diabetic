@@ -29,6 +29,11 @@ LocalDiabetic is local diabetic support infrastructure: care packs, trusted vend
 | Privacy Doctrine | prove trust | all | We do not harvest diabetic data. | local-first, consent, no sale | Read doctrine | plain language |
 | Contact | human connection | all | Reach the LocalDiabetic team. | email, roles, safety warning | Contact | no emergency requests |
 
+## X Handle
+
+- Handle: [@opendiabetics](https://x.com/opendiabetics)
+- Use: shared OpenDiabetic / LocalDiabetic public updates until LocalDiabetic has a dedicated account.
+
 ## X Bio
 
 Local diabetic support infrastructure: care packs, trusted vendors, reminders, family coordination, local vaults, and real-world help. No data harvesting.

@@ -9,6 +9,7 @@ Domains:
 
 Contact email: `care@localdiabetic.com`
 Phone: `561.532.7120`
+X: [`@opendiabetics`](https://x.com/opendiabetics)
 HQ: Jupiter, Florida
 Operator: Swarmandbee LLC
 
