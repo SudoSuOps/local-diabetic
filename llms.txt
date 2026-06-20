@@ -1,0 +1,27 @@
+# LocalDiabetic
+
+> LocalDiabetic puts a person's diabetic records, reminders, and a hand on their shoulder right in their own home — organized, private, and free. Your information never leaves your house. It is the member-facing "healers" half of OpenDiabetic, built by a Type 1 diabetic for people living with diabetes. It organizes and reminds; it never diagnoses and never replaces a doctor.
+
+## What LocalDiabetic gives a member (free)
+- **Reminders that find you:** medications, foot checks, appointments, and supply reorders — gentle nudges to your phone and watch, 24/7.
+- **Your records, safe at home:** one private place for everything, on your own box, in your own home. Never seen, never sold, never shared.
+- **The daily foot check:** a guided two-minute routine and a daily nudge — the habit that prevents diabetic foot complications.
+- **A hand for your family:** if you go quiet when something matters, a loved one gets a gentle check-in. Nobody falls through alone.
+- **An on-box AI helper:** it organizes your papers, restates an insurance letter in plain language, and preps your questions for the doctor — privately, on your own box. It never plays doctor.
+- **Care when life gets hard:** as the doors open — a ride to the appointment, diabetic shoes, supplies — real help, free, no strings.
+
+## The promise
+- **Free.** It costs you nothing. The compute pays for it. No charge, no strings, no catch.
+- **Private.** Your records never leave your home. The architecture (a firewall enforced in code) makes it so — not to us, not to the cloud, not to anyone.
+- **A hand on your shoulder.** Reminders when you need them, family when it matters, real help when life gets hard.
+
+## Who built it
+Donovan Mackey — a top commercial real-estate broker who is himself a Type 1 diabetic (lost toes, 14+ foot surgeries). Built from lived experience, for real people. Headquarters: Jupiter, Florida, USA. Contact: build@opendiabetic.com · X/Twitter: https://x.com/opendiabetics.
+
+## Links
+- https://localdiabetic.com — the member front door
+- https://opendiabetic.com — OpenDiabetic, the compute "hive" that funds it
+- https://diabeticledger.com — the public, browser-verified giving ledger
+
+## Important
+LocalDiabetic is not medical advice, diagnosis, or treatment, and is not a medical device or provider. It organizes information, sends reminders, and helps a person prepare — and always tells the person to confirm anything medical with their clinician.

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs><radialGradient id="g" cx="50%" cy="0%" r="70%">
+    <stop offset="0%" stop-color="#F2B441" stop-opacity="0.28"/><stop offset="60%" stop-color="#FBF7EF" stop-opacity="0"/>
+  </radialGradient></defs>
+  <rect width="1200" height="630" fill="#FBF7EF"/>
+  <rect width="1200" height="630" fill="url(#g)"/>
+  <g transform="translate(90,150)">
+    <polygon points="60,5 110,33 110,88 60,116 10,88 10,33" fill="#F2B441"/>
+    <rect x="34" y="40" width="52" height="42" rx="6" fill="#FBF7EF"/>
+    <line x1="34" y1="54" x2="86" y2="54" stroke="#D99A2B" stroke-width="6"/>
+    <line x1="34" y1="68" x2="86" y2="68" stroke="#D99A2B" stroke-width="6"/>
+  </g>
+  <text x="240" y="225" font-family="sans-serif" font-size="76" font-weight="800" fill="#2B2118">Local<tspan fill="#D99A2B">Diabetic</tspan></text>
+  <text x="92" y="385" font-family="sans-serif" font-size="52" font-weight="800" fill="#2B2118">Diabetes is a 24/7 job.</text>
+  <text x="92" y="450" font-family="sans-serif" font-size="52" font-weight="800" fill="#D99A2B">You don't have to carry it alone.</text>
+  <text x="92" y="530" font-family="sans-serif" font-size="30" fill="#5b4f41">Your records, reminders &amp; a hand on your shoulder — at home, private, free.</text>
+  <text x="92" y="580" font-family="sans-serif" font-size="26" fill="#1a6fb5">localdiabetic.com</text>
+</svg>
