@@ -112,3 +112,5 @@ h2{font-size:clamp(28px,4.2vw,42px);font-weight:800;margin:0 0 10px;text-align:c
   .pillars{grid-template-columns:1fr}
   .start .who{grid-template-columns:1fr}
 }
+
+.bee{font-size:1.4em;line-height:1;margin-right:.15em;vertical-align:-.05em}
