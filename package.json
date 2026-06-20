@@ -1,21 +1,8 @@
 {
+  "name": "local-diabetic",
+  "private": true,
+  "description": "LocalDiabetic member front door — static, no dependencies",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "@tailwindcss/vite": "latest",
-    "@vitejs/plugin-react": "latest",
-    "react": "latest",
-    "react-dom": "latest",
-    "tailwindcss": "latest",
-    "typescript": "latest",
-    "vite": "latest"
-  },
-  "devDependencies": {
-    "@types/node": "^26.0.0",
-    "@types/react": "^19.2.17",
-    "@types/react-dom": "^19.2.3"
+    "build": "rm -rf dist && mkdir -p dist && cp -r index.html style.css assets dist/ && echo built"
   }
 }

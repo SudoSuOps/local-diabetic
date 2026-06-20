@@ -1,51 +1,14 @@
-# LocalDiabetics
+# LocalDiabetic — the member front door
 
-LocalDiabetics is the Jupiter, Florida HQ/community operating brand for local diabetic support infrastructure: care packs, trusted vendors, reminders, family coordination, local vaults, and real-world help without harvesting diabetic data.
+*Diabetes is a 24/7 job. You don't have to carry it alone.*
 
-Domains:
+The warm, member-facing landing page for **localdiabetic.com** on Cloudflare Pages.
+Static (no framework, no deps). Brand-true to the LocalDiabetic "healers" kit (warm/light theme).
 
-- `localdiabetic.com`
-- `localdiabetic.org`
+Honest by design: the page invites people to **join the first members** — it does not promise a
+service that isn't live yet. Records-stay-home, free-to-patient, a-hand-on-your-shoulder.
 
-Contact email: `care@localdiabetic.com`
-Phone: `561.532.7120`
-X: [`@opendiabetics`](https://x.com/opendiabetics)
-HQ: Jupiter, Florida
-Operator: Swarmandbee LLC
+- `index.html` · `style.css` · `assets/` (LocalDiabetic wordmark/mark/icon)
+- Deploys two ways: serve root (no build) or `npm run build` → `dist/`.
 
-## Relationship to OpenDiabetic
-
-OpenDiabetic Foundation is the privacy-first diabetic compute infrastructure side. LocalDiabetics / LocalDiabetic is the real-world local deployment layer: human-in-the-loop support nodes, vendors, care packs, local vaults, and community operations.
-
-## Safety
-
-LocalDiabetic does not provide medical advice, diagnosis, treatment, medication dosing, wound-care instructions, or emergency triage. For medical questions, contact licensed medical professionals. For emergencies, call emergency services.
-
-## Research Pack
-
-The operator-grade LocalDiabetic strategy pack is in `docs/localdiabetic/`.
-
-Key files:
-
-- `localdiabetic_master_research_report.md`
-- `localdiabetic_product_requirements_doc.md`
-- `localdiabetic_ops_checklists.md`
-- `localdiabetic_vendor_matrix.csv`
-- `localdiabetic_care_pack_matrix.csv`
-- `localdiabetic_pilot_tasks.csv`
-- `localdiabetic_partnership_targets.csv`
-
-## Development
-
-```bash
-npm install
-npm run dev
-npm run build
-```
-
-## Cloudflare Pages
-
-- Framework preset: Vite
-- Build command: `npm run build`
-- Output directory: `dist`
-- Custom domains: `localdiabetic.com`, `www.localdiabetic.com`, `localdiabetic.org`, `www.localdiabetic.org`
+*LocalDiabetic is the healers · OpenDiabetic is the hive · DiabeticLedger is the proof.*

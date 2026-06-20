@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://localdiabetic.com/sitemap.xml
-# LocalDiabetic does not provide diagnosis, treatment, medication dosing, wound-care instructions, or emergency triage.
