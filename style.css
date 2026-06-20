@@ -86,6 +86,8 @@ h2{font-size:clamp(28px,4.2vw,42px);font-weight:800;margin:0 0 10px;text-align:c
 .footer{background:var(--cocoa);color:#f4ece0;padding:48px 0;text-align:center}
 .footer p{color:#bcae9c;margin:10px 0}
 .footer .links a{color:#f4ece0}
+.footer .contact{font-size:14px}
+.footer .contact a{color:#f4ece0}
 .footer .motto{color:var(--honey);font-weight:600;margin-top:16px}
 
 @media(max-width:860px){
