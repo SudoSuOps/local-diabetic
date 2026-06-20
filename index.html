@@ -111,10 +111,20 @@
       <div class="card"><h3>For your family</h3><p>Caring for someone diabetic — a parent, a
         spouse? We'll help you help them.</p></div>
     </div>
-    <div class="cta center">
-      <a class="btn big" href="mailto:build@opendiabetic.com?subject=I'd like to join LocalDiabetic">Tell us what you need →</a>
-    </div>
-    <p class="micro center">build@opendiabetic.com · we read every message, and we answer like neighbors.</p>
+    <form id="contactForm" class="contact-form">
+      <div class="row">
+        <label>Your name<input name="name" autocomplete="name" required></label>
+        <label>Email<input name="email" type="email" autocomplete="email" required></label>
+      </div>
+      <label>This is for
+        <select name="topic"><option>Myself</option><option>A family member I care for</option></select></label>
+      <label>Tell us a little about what you need
+        <textarea name="message" rows="4" required placeholder="A few words is plenty — we'll take it from there."></textarea></label>
+      <input type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true" class="hp">
+      <button type="submit">Send it our way →</button>
+      <p class="formnote" id="contactResult" role="status"></p>
+    </form>
+    <p class="micro center">Or email <a href="mailto:build@opendiabetic.com">build@opendiabetic.com</a> — we read every message, and we answer like neighbors.</p>
   </div>
 </section>
 
@@ -133,5 +143,21 @@
   </div>
 </footer>
 
+<script>
+const f = document.getElementById("contactForm");
+f && f.addEventListener("submit", async e => {
+  e.preventDefault();
+  const r = document.getElementById("contactResult"), btn = f.querySelector("button");
+  r.className = "formnote"; r.textContent = "Sending…"; btn.disabled = true;
+  const body = { name:f.name.value, email:f.email.value, topic:f.topic.value, message:f.message.value, company:f.company.value };
+  try {
+    const res = await fetch("/api/contact", { method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify(body) });
+    const out = await res.json();
+    if (res.ok && out.ok){ r.className="formnote ok"; r.textContent="Thank you 🐝 we got it — we'll reach out personally, soon."; f.reset(); }
+    else { r.className="formnote bad"; r.textContent = out.error || "Couldn't send — please email build@opendiabetic.com."; }
+  } catch { r.className="formnote bad"; r.textContent="Couldn't reach us — please email build@opendiabetic.com."; }
+  btn.disabled = false;
+});
+</script>
 </body>
 </html>

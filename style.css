@@ -82,6 +82,22 @@ h2{font-size:clamp(28px,4.2vw,42px);font-weight:800;margin:0 0 10px;text-align:c
 .start .who .card{text-align:center}
 .start .who h3{font-size:22px}
 
+/* contact form */
+.contact-form{max-width:600px;margin:6px auto 0;text-align:left;display:flex;flex-direction:column;gap:15px}
+.contact-form .row{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.contact-form label{display:flex;flex-direction:column;gap:6px;font-size:15px;color:var(--cocoa-soft);font-weight:600}
+.contact-form input,.contact-form select,.contact-form textarea{background:#fff;border:1px solid var(--line);
+  color:var(--cocoa);border-radius:12px;padding:13px 15px;font-size:17px;font-family:inherit}
+.contact-form input:focus,.contact-form select:focus,.contact-form textarea:focus{outline:2px solid var(--honey);border-color:var(--honey)}
+.contact-form .hp{position:absolute;left:-9999px;width:1px;height:1px}
+.contact-form button{background:var(--honey);color:#1a1205;border:0;font-weight:800;padding:15px 26px;
+  border-radius:14px;font-size:17px;cursor:pointer}
+.contact-form button:hover{background:var(--honey-600)}
+.contact-form button:disabled{opacity:.6;cursor:default}
+.formnote{min-height:22px;font-weight:700;margin:2px 0 0;text-align:center}
+.formnote.ok{color:#1f8f5f} .formnote.bad{color:#c0413e}
+@media(max-width:560px){.contact-form .row{grid-template-columns:1fr}}
+
 /* footer */
 .footer{background:var(--cocoa);color:#f4ece0;padding:48px 0;text-align:center}
 .footer p{color:#bcae9c;margin:10px 0}
