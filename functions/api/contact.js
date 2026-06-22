@@ -37,3 +37,13 @@ export async function onRequestPost({ request, env }) {
 }
 
 export const onRequestGet = () => json({ ok: true, endpoint: "contact" });
+
+// Preflight / method probe — the form POSTs same-origin (no preflight needed),
+// but answer OPTIONS cleanly for robustness and any future cross-origin use.
+export function onRequestOptions() {
+  return new Response(null, { status: 204, headers: {
+    "Allow": "POST, OPTIONS",
+    "Access-Control-Allow-Methods": "POST, OPTIONS",
+    "Access-Control-Allow-Headers": "Content-Type"
+  }});
+}
