@@ -255,6 +255,21 @@
   </div>
 </section>
 
+<section id="news" class="section news">
+  <div class="wrap">
+    <h2><span class="bee" aria-hidden="true">🐝</span> The DailyLocal</h2>
+    <p class="sub">LocalDiabetic news, the models, new features, and little wins — straight to your inbox.
+       The good stuff, no noise. Unsubscribe anytime.</p>
+    <form id="newsForm" class="news-form">
+      <input name="email" type="email" autocomplete="email" placeholder="you@email.com" aria-label="Email address" required>
+      <input type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true" class="hp">
+      <button type="submit">Subscribe →</button>
+    </form>
+    <p class="formnote" id="newsResult" role="status"></p>
+    <p class="micro center">Free · updates, not noise · your email stays private.</p>
+  </div>
+</section>
+
 <footer class="footer">
   <div class="wrap">
     <img src="assets/wordmark.svg" alt="LocalDiabetic" height="38">
@@ -293,6 +308,21 @@ f && f.addEventListener("submit", async e => {
     if (res.ok && out.ok){ r.className="formnote ok"; r.textContent="Thank you 🐝 we got it — we'll reach out personally, soon."; f.reset(); }
     else { r.className="formnote bad"; r.textContent = out.error || "Couldn't send — please email build@opendiabetic.com."; }
   } catch { r.className="formnote bad"; r.textContent="Couldn't reach us — please email build@opendiabetic.com."; }
+  btn.disabled = false;
+});
+
+const nf = document.getElementById("newsForm");
+nf && nf.addEventListener("submit", async e => {
+  e.preventDefault();
+  const r = document.getElementById("newsResult"), btn = nf.querySelector("button");
+  r.className = "formnote"; r.textContent = "Signing you up…"; btn.disabled = true;
+  try {
+    const res = await fetch("/api/subscribe", { method:"POST", headers:{"Content-Type":"application/json"},
+      body: JSON.stringify({ email: nf.email.value, company: nf.company.value }) });
+    const out = await res.json();
+    if (res.ok && out.ok){ r.className="formnote ok"; r.textContent="You're in 🐝 welcome to The DailyLocal."; nf.reset(); }
+    else { r.className="formnote bad"; r.textContent = out.error || "Couldn't sign you up — email build@opendiabetic.com."; }
+  } catch { r.className="formnote bad"; r.textContent="Couldn't reach us — email build@opendiabetic.com."; }
   btn.disabled = false;
 });
 </script>
