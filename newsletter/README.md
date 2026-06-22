@@ -24,6 +24,7 @@ Every issue lives here as markdown, version-controlled, so the list is a real ar
 |---|-------|------|--------------|
 | 000 | Welcome | [000-welcome.md](000-welcome.md) | — |
 | 001 | Daily foot check | [001-foot-care.md](001-foot-care.md) | NIDDK / ADA / IWGDF foot-care guidance |
+| 002 | Know your numbers | [002-know-your-numbers.md](002-know-your-numbers.md) | ADA / NIDDK — A1C & time-in-range |
 
 ## How issues get made
 Draft with the **`/dailylocal`** skill (in-voice + grounded + defendable), review, then send via Resend.
