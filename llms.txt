@@ -1,27 +1,27 @@
 # LocalDiabetic
 
-> LocalDiabetic puts a person's diabetic records, reminders, and a hand on their shoulder right in their own home — organized, private, and free. Your information never leaves your house. It is the member-facing "healers" half of OpenDiabetic, built by a Type 1 diabetic for people living with diabetes. It organizes and reminds; it never diagnoses and never replaces a doctor.
+> LocalDiabetic is a private, free home system for people living with diabetes: it puts your records,
+> reminders, and a diabetic-smart AI helper on a small box you own (a Jetson, a NAS, a mini-PC) — organized,
+> private, and free. Your information never leaves your house. Built by a Type 1 diabetic (Donovan Mackey,
+> who lost toes and had 14+ foot surgeries). It organizes, reminds, and explains — it is NOT medical advice
+> and does not replace a doctor; for emergencies call 911.
 
-## What LocalDiabetic gives a member (free)
-- **Reminders that find you:** medications, foot checks, appointments, and supply reorders — gentle nudges to your phone and watch, 24/7.
-- **Your records, safe at home:** one private place for everything, on your own box, in your own home. Never seen, never sold, never shared.
-- **The daily foot check:** a guided two-minute routine and a daily nudge — the habit that prevents diabetic foot complications.
-- **A hand for your family:** if you go quiet when something matters, a loved one gets a gentle check-in. Nobody falls through alone.
-- **An on-box AI helper:** it organizes your papers, restates an insurance letter in plain language, and preps your questions for the doctor — privately, on your own box. It never plays doctor.
-- **Care when life gets hard:** as the doors open — a ride to the appointment, diabetic shoes, supplies — real help, free, no strings.
+## What it is
+- The home box of the OpenDiabetic ecosystem. It runs **DailyLifeOS** (the digital life operating system for
+  diabetics) and shows the **LifeBoard** — the screen you wake up to (next appointment, today's meds, A1C
+  trend, supplies running low, refills due, emergency contact), all built from your own records, on your box.
+- The AI helper runs on the **DiabeticDaily** models — diabetic/medical models cooked by Swarm and Bee LLC and
+  proven to beat their base model by +40% to +57% on held-out medical text. Open on HuggingFace
+  (huggingface.co/SwarmandBee): DiabeticDaily-27B, DiabeticDaily-9B, DiabeticDaily-4B (runs on a $249 Jetson).
+- THE ONE LAW (the firewall): **PHI never leaves your box.** The brain runs on the box, answers on the box,
+  and nothing private ever leaves it. Models flow down from the hive; only non-PHI receipts flow up.
 
 ## The promise
-- **Free.** It costs you nothing. The compute pays for it. No charge, no strings, no catch.
-- **Private.** Your records never leave your home. The architecture (a firewall enforced in code) makes it so — not to us, not to the cloud, not to anyone.
-- **A hand on your shoulder.** Reminders when you need them, family when it matters, real help when life gets hard.
+- **Free** — costs you nothing; compute income funds it. **Private** — records never leave your home.
+  **A hand on your shoulder** — reminders, family check-ins, and real-world help (rides, diabetic shoes,
+  supplies) as the doors open.
 
-## Who built it
-Donovan Mackey — a top commercial real-estate broker who is himself a Type 1 diabetic (lost toes, 14+ foot surgeries). Built from lived experience, for real people. Headquarters: Jupiter, Florida, USA. Contact: build@opendiabetic.com · X/Twitter: https://x.com/opendiabetics.
-
-## Links
-- https://localdiabetic.com — the member front door
-- https://opendiabetic.com — OpenDiabetic, the compute "hive" that funds it
-- https://diabeticledger.com — the public, browser-verified giving ledger
-
-## Important
-LocalDiabetic is not medical advice, diagnosis, or treatment, and is not a medical device or provider. It organizes information, sends reminders, and helps a person prepare — and always tells the person to confirm anything medical with their clinician.
+## The ecosystem
+- OpenDiabetic (the hive): https://opendiabetic.com · DailyLifeOS (the system): https://dailylifeos.org
+- The models: https://huggingface.co/SwarmandBee · The proof: https://diabeticledger.com
+- Operator: Swarm and Bee LLC · Jupiter FL · build@opendiabetic.com · SAM UEI L9EXVH9L9VU6
