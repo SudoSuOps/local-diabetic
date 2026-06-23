@@ -45,7 +45,7 @@ def main():
         "text": email_text(body),
         "dryRun": dry,
     }
-    req = urllib.request.Request(ENDPOINT, json.dumps(payload).encode(), {"Content-Type": "application/json"})
+    req = urllib.request.Request(ENDPOINT, json.dumps(payload).encode(), {"Content-Type": "application/json", "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36"})
     try:
         out = json.loads(urllib.request.urlopen(req, timeout=180).read())
     except urllib.error.HTTPError as e:
