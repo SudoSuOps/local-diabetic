@@ -70,6 +70,14 @@ export async function onRequestPost({ request, env }) {
   if (data.company) return json({ ok: true });               // honeypot
   const email = clean(data.email, 160);
   if (!looksEmail(email)) return json({ error: "Please enter a valid email." }, 400);
+
+  // store the subscriber in OUR own list — Cloudflare KV (free, sovereign; no Resend Marketing plan needed)
+  if (env.localdiabetics) {
+    try {
+      await env.localdiabetics.put(`sub:${email.toLowerCase()}`,
+        JSON.stringify({ email, date: new Date().toISOString(), source: "localdiabetic.com" }));
+    } catch (_) { /* the build@ notification below still captures it */ }
+  }
   if (!env.RESEND_API_KEY) return json({ error: "Signups are paused — email build@localdiabetic.com to join." }, 500);
 
   const auth = { Authorization: `Bearer ${env.RESEND_API_KEY}`, "Content-Type": "application/json" };
