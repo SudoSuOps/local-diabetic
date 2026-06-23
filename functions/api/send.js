@@ -64,4 +64,4 @@ export async function onRequestPost({ request, env }) {
   return json({ ok: true, subscribers: emails.length, attempted: targets.length, sent, failed });
 }
 
-export const onRequestGet = () => json({ ok: true, endpoint: "send", hint: "POST {secret, subject, html, text, dryRun:true}" });
+export const onRequestGet = ({ env }) => json({ ok: true, endpoint: "send", secretSet: !!env.SEND_SECRET, kvBound: !!env.localdiabetics });
