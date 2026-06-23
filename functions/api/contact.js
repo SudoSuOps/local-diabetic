@@ -25,7 +25,7 @@ export async function onRequestPost({ request, env }) {
     method: "POST",
     headers: { Authorization: `Bearer ${env.RESEND_API_KEY}`, "Content-Type": "application/json" },
     body: JSON.stringify({
-      from: "LocalDiabetic <hello@opendiabetic.com>",
+      from: "LocalDiabetic <build@localdiabetic.com>",
       to: ["build@localdiabetic.com"],
       reply_to: email,
       subject: `[LocalDiabetic] New member — ${name || email} (for: ${forwho})`,

@@ -87,7 +87,7 @@ export async function onRequestPost({ request, env }) {
   const welcome = await fetch("https://api.resend.com/emails", {
     method: "POST", headers: auth,
     body: JSON.stringify({
-      from: "Donovan · The DailyLocal <hello@opendiabetic.com>",
+      from: "Donovan · The DailyLocal <build@localdiabetic.com>",
       to: [email],
       reply_to: "build@localdiabetic.com",
       subject: "Welcome to The DailyLocal 🐝",
@@ -100,7 +100,7 @@ export async function onRequestPost({ request, env }) {
   const notify = await fetch("https://api.resend.com/emails", {
     method: "POST", headers: auth,
     body: JSON.stringify({
-      from: "The DailyLocal <hello@opendiabetic.com>",
+      from: "The DailyLocal <build@localdiabetic.com>",
       to: ["build@localdiabetic.com"],
       reply_to: email,
       subject: `[The DailyLocal] New subscriber — ${email}`,
