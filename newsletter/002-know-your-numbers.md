@@ -2,6 +2,7 @@
 issue: 002
 title: Know your numbers
 subject: "Know your numbers 🐝"
+date: 2026-06-22
 status: ready to send
 source: ADA Standards of Care (A1C ~3-month average; general adult A1C goal often ~7%, individualized) · NIDDK "The A1C Test & Diabetes" · time-in-range from CGM (common target window 70–180 mg/dL, set by the care team)
 ---

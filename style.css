@@ -180,3 +180,27 @@ h2{font-size:clamp(28px,4.2vw,42px);font-weight:800;margin:0 0 10px;text-align:c
 .news-form button:hover{background:var(--honey-600)}
 .news-form button:disabled{opacity:.6;cursor:default}
 @media(max-width:480px){.news-form{flex-direction:column}}
+
+/* The DailyLocal — published articles + archive */
+.post{max-width:680px;margin:0 auto;padding:40px 22px 10px}
+.post .eyebrow{color:var(--honey-600);font-weight:700;font-size:14px;letter-spacing:.3px;margin:0 0 6px}
+.post h1{font-size:clamp(28px,4.6vw,40px);line-height:1.18;margin:0 0 22px}
+.post h2{font-size:24px;margin:30px 0 8px}
+.post p{font-size:18px;line-height:1.7;color:#3f372d;margin:0 0 16px}
+.post strong{font-weight:800;color:var(--cocoa)}
+.post .steps{margin:4px 0 18px;padding-left:4px;list-style:none}
+.post .steps li{font-size:18px;line-height:1.6;padding:5px 0 5px 26px;position:relative;color:#3f372d}
+.post .steps li:before{content:"🐝";position:absolute;left:0;font-size:13px;top:8px}
+.post .signbee{text-align:center;color:var(--honey-600);font-weight:800;font-size:20px;margin:22px 0}
+.post .rule{border:0;border-top:1px solid var(--line);margin:26px 0}
+.post .source{font-size:13.5px;color:#8a7d6c;background:var(--paper-100);border-radius:12px;padding:12px 16px;line-height:1.5}
+.post-cta{margin:34px 0 10px;padding:26px;background:var(--paper-100);border:1px solid var(--line);border-radius:18px;text-align:center}
+.post-cta p{font-size:17px;color:#5b4f41;margin:0 0 14px}
+.post-cta .byline{font-size:13.5px;color:#8a7d6c;margin:16px 0 0}
+/* archive */
+.archive h2{text-align:left;font-size:20px;color:var(--honey-600);margin:26px 0 12px;border-bottom:1px solid var(--line);padding-bottom:6px}
+.arows{display:flex;flex-direction:column;gap:10px}
+.arow{display:block;background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 20px;transition:transform .12s,box-shadow .12s}
+.arow:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(43,33,24,.08)}
+.arow b{display:block;color:var(--cocoa);font-size:18px;margin-bottom:3px}
+.arow span{color:#8a7d6c;font-size:14.5px}
