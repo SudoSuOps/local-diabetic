@@ -19,13 +19,16 @@ def email_html(body):
     return ('<div style="font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;'
             'max-width:560px;margin:0 auto;color:#2B2118;line-height:1.65;font-size:16px">'
             '<p style="font-size:20px;font-weight:800;color:#D99A2B;margin:0 0 14px">🐝 The DailyLocal</p>'
-            f'{inner}</div>')
+            f'{inner}'
+            '<p style="margin-top:30px;color:#5b4f41;font-size:15px;line-height:1.55">— Donovan<br>'
+            '<span style="color:#8a7d6c">Building one day at a time 🐝</span></p>'
+            '</div>')
 
 
 def email_text(body):
     import re
     t = body.replace("**", "").replace("*", "")
-    return re.sub(r"^- ", "• ", t, flags=re.M)
+    return re.sub(r"^- ", "• ", t, flags=re.M) + "\n\n— Donovan\nBuilding one day at a time 🐝"
 
 
 def main():

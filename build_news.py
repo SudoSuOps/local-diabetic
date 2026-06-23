@@ -106,6 +106,7 @@ def page(meta, body):
   <p class="eyebrow">🐝 The DailyLocal{f' · {date}' if date else ''}</p>
   <h1>{title}</h1>
   {body_html(body)}
+  <p class="signoff">— Donovan<br>Building one day at a time 🐝</p>
   {src_html}
   <div class="post-cta">
     <p><b>The DailyLocal</b> — one small diabetic-life win at a time, written by someone living it.</p>

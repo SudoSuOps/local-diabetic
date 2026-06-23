@@ -204,3 +204,7 @@ h2{font-size:clamp(28px,4.2vw,42px);font-weight:800;margin:0 0 10px;text-align:c
 .arow:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(43,33,24,.08)}
 .arow b{display:block;color:var(--cocoa);font-size:18px;margin-bottom:3px}
 .arow span{color:#8a7d6c;font-size:14.5px}
+
+/* The DailyLocal — publisher sign-off */
+.post .signoff{margin:30px 0 6px;color:#5b4f41;font-size:16px;line-height:1.55}
+.post .signoff{font-style:normal}
