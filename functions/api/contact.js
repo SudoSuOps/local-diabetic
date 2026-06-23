@@ -1,6 +1,6 @@
 // Cloudflare Pages Function — POST /api/contact -> sends an email via Resend.
 // Requires env var RESEND_API_KEY (set in the Pages project settings).
-// Member front door: a real person reaching out for help. Goes to build@opendiabetic.com,
+// Member front door: a real person reaching out for help. Goes to build@localdiabetic.com,
 // submitter as reply-to so we can answer like neighbors.
 
 const json = (obj, status = 200) =>
@@ -19,20 +19,20 @@ export async function onRequestPost({ request, env }) {
   const message = clean(data.message, 4000);
   if (data.company) return json({ ok: true });            // honeypot
   if (!looksEmail(email) || message.length < 2) return json({ error: "Please add a valid email and a short note." }, 400);
-  if (!env.RESEND_API_KEY) return json({ error: "We can't take messages just yet — email build@opendiabetic.com." }, 500);
+  if (!env.RESEND_API_KEY) return json({ error: "We can't take messages just yet — email build@localdiabetic.com." }, 500);
 
   const r = await fetch("https://api.resend.com/emails", {
     method: "POST",
     headers: { Authorization: `Bearer ${env.RESEND_API_KEY}`, "Content-Type": "application/json" },
     body: JSON.stringify({
       from: "LocalDiabetic <hello@opendiabetic.com>",
-      to: ["build@opendiabetic.com"],
+      to: ["build@localdiabetic.com"],
       reply_to: email,
       subject: `[LocalDiabetic] New member — ${name || email} (for: ${forwho})`,
       text: `Someone reached out from localdiabetic.com\n\nName: ${name}\nEmail: ${email}\nThis is for: ${forwho}\n\n${message}`,
     }),
   });
-  if (!r.ok) return json({ error: "Something hiccuped — please email build@opendiabetic.com and we'll answer.", detail: (await r.text()).slice(0, 200) }, 502);
+  if (!r.ok) return json({ error: "Something hiccuped — please email build@localdiabetic.com and we'll answer.", detail: (await r.text()).slice(0, 200) }, 502);
   return json({ ok: true });
 }
 

@@ -70,7 +70,7 @@ export async function onRequestPost({ request, env }) {
   if (data.company) return json({ ok: true });               // honeypot
   const email = clean(data.email, 160);
   if (!looksEmail(email)) return json({ error: "Please enter a valid email." }, 400);
-  if (!env.RESEND_API_KEY) return json({ error: "Signups are paused — email build@opendiabetic.com to join." }, 500);
+  if (!env.RESEND_API_KEY) return json({ error: "Signups are paused — email build@localdiabetic.com to join." }, 500);
 
   const auth = { Authorization: `Bearer ${env.RESEND_API_KEY}`, "Content-Type": "application/json" };
 
@@ -89,7 +89,7 @@ export async function onRequestPost({ request, env }) {
     body: JSON.stringify({
       from: "Donovan · The DailyLocal <hello@opendiabetic.com>",
       to: [email],
-      reply_to: "build@opendiabetic.com",
+      reply_to: "build@localdiabetic.com",
       subject: "Welcome to The DailyLocal 🐝",
       text: WELCOME_TEXT,
       html: WELCOME_HTML,
@@ -101,7 +101,7 @@ export async function onRequestPost({ request, env }) {
     method: "POST", headers: auth,
     body: JSON.stringify({
       from: "The DailyLocal <hello@opendiabetic.com>",
-      to: ["build@opendiabetic.com"],
+      to: ["build@localdiabetic.com"],
       reply_to: email,
       subject: `[The DailyLocal] New subscriber — ${email}`,
       text: `New DailyLocal signup from localdiabetic.com\n\nEmail: ${email}\n\nWelcome email ${welcome && welcome.ok ? "sent ✓" : "FAILED — send manually"}.`,
@@ -109,7 +109,7 @@ export async function onRequestPost({ request, env }) {
   }).catch(() => null);
 
   if ((welcome && welcome.ok) || (notify && notify.ok)) return json({ ok: true });
-  return json({ error: "Couldn't sign you up just now — please email build@opendiabetic.com." }, 502);
+  return json({ error: "Couldn't sign you up just now — please email build@localdiabetic.com." }, 502);
 }
 
 export const onRequestGet = () => json({ ok: true, endpoint: "subscribe" });

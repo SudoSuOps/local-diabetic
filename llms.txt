@@ -24,4 +24,4 @@
 ## The ecosystem
 - OpenDiabetic (the hive): https://opendiabetic.com · DailyLifeOS (the system): https://dailylifeos.org
 - The models: https://huggingface.co/SwarmandBee · The proof: https://diabeticledger.com
-- Operator: Swarm and Bee LLC · Jupiter FL · build@opendiabetic.com · SAM UEI L9EXVH9L9VU6
+- Operator: Swarm and Bee LLC · Jupiter FL · build@localdiabetic.com · SAM UEI L9EXVH9L9VU6

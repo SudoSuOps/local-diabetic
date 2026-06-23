@@ -42,7 +42,7 @@
       "founder": { "@type": "Person", "name": "Donovan Mackey", "description": "Type 1 diabetic living the full continuum; builds LocalDiabetic from lived experience." },
       "foundingLocation": { "@type": "Place", "name": "Jupiter, Florida, USA" },
       "address": { "@type": "PostalAddress", "addressLocality": "Jupiter", "addressRegion": "FL", "addressCountry": "US" },
-      "email": "build@opendiabetic.com",
+      "email": "build@localdiabetic.com",
       "telephone": "+1-561-532-7120",
       "sameAs": ["https://x.com/opendiabetics", "https://opendiabetic.com", "https://dailylifeos.org", "https://diabeticdocs.com", "https://diabeticnode.com", "https://diabeticdatasets.com", "https://diabeticmodels.com", "https://diabetictruth.org", "https://diabeticledger.com", "https://diabeticdonation.com", "https://huggingface.co/SwarmandBee", "https://github.com/SudoSuOps"],
       "knowsAbout": ["diabetes self-management", "diabetic foot care", "medication reminders", "private health records", "on-box AI", "edge AI"],
@@ -250,7 +250,7 @@
       <button type="submit">Send it our way →</button>
       <p class="formnote" id="contactResult" role="status"></p>
     </form>
-    <p class="micro center">Or email <a href="mailto:build@opendiabetic.com">build@opendiabetic.com</a> — we read every message, and we answer like neighbors.</p>
+    <p class="micro center">Or email <a href="mailto:build@localdiabetic.com">build@localdiabetic.com</a> — we read every message, and we answer like neighbors.</p>
     <p class="micro center disc">LocalDiabetic organizes, reminds, and explains — it is <b>not medical advice</b> and does not replace your doctor. For emergencies, call 911.</p>
   </div>
 </section>
@@ -285,7 +285,7 @@
       <a href="https://diabeticledger.com">DiabeticLedger</a> ·
       <a href="https://diabeticdonation.com">DiabeticDonation</a>
     </p>
-    <p class="contact">Email <a href="mailto:build@opendiabetic.com">build@opendiabetic.com</a> ·
+    <p class="contact">Email <a href="mailto:build@localdiabetic.com">build@localdiabetic.com</a> ·
       HQ · Jupiter, Florida · <a href="tel:+15615327120">561.532.7120</a> ·
       <a href="https://x.com/opendiabetics" rel="me">@opendiabetics</a> · <a href="https://huggingface.co/SwarmandBee" rel="me">🤗 Hugging Face</a></p>
     <p class="motto">Give people what they need, not what you have. Life deserves a little peace of mind.</p>
@@ -306,8 +306,8 @@ f && f.addEventListener("submit", async e => {
     const res = await fetch("/api/contact", { method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify(body) });
     const out = await res.json();
     if (res.ok && out.ok){ r.className="formnote ok"; r.textContent="Thank you 🐝 we got it — we'll reach out personally, soon."; f.reset(); }
-    else { r.className="formnote bad"; r.textContent = out.error || "Couldn't send — please email build@opendiabetic.com."; }
-  } catch { r.className="formnote bad"; r.textContent="Couldn't reach us — please email build@opendiabetic.com."; }
+    else { r.className="formnote bad"; r.textContent = out.error || "Couldn't send — please email build@localdiabetic.com."; }
+  } catch { r.className="formnote bad"; r.textContent="Couldn't reach us — please email build@localdiabetic.com."; }
   btn.disabled = false;
 });
 
@@ -321,8 +321,8 @@ nf && nf.addEventListener("submit", async e => {
       body: JSON.stringify({ email: nf.email.value, company: nf.company.value }) });
     const out = await res.json();
     if (res.ok && out.ok){ r.className="formnote ok"; r.textContent="You're in 🐝 welcome to The DailyLocal."; nf.reset(); }
-    else { r.className="formnote bad"; r.textContent = out.error || "Couldn't sign you up — email build@opendiabetic.com."; }
-  } catch { r.className="formnote bad"; r.textContent="Couldn't reach us — email build@opendiabetic.com."; }
+    else { r.className="formnote bad"; r.textContent = out.error || "Couldn't sign you up — email build@localdiabetic.com."; }
+  } catch { r.className="formnote bad"; r.textContent="Couldn't reach us — email build@localdiabetic.com."; }
   btn.disabled = false;
 });
 </script>
