@@ -30,5 +30,5 @@ No noise. No hype. Just useful progress.
 
 Thanks for being early.
 
-— Donovan Mackey
+— Donovan
 Type 1 Diabetic · building LocalDiabetic one day at a time

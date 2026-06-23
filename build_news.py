@@ -110,7 +110,7 @@ def page(meta, body):
   <div class="post-cta">
     <p><b>The DailyLocal</b> — one small diabetic-life win at a time, written by someone living it.</p>
     <a class="btn big" href="/#news">Get it free in your inbox →</a>
-    <p class="byline">— Donovan Mackey · Type 1 Diabetic · building LocalDiabetic one day at a time</p>
+    <p class="byline">— Donovan · Type 1 Diabetic · building LocalDiabetic one day at a time</p>
   </div>
 </article>
 <footer class="footer"><div class="wrap">
