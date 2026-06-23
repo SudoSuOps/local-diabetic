@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Study 001 — Can a $250 box run a diabetic assistant you can rely on? · LocalStudy</title>
+<meta name="description" content="DiabeticDaily-4B discovery trial on a $250 Jetson Orin Nano: 159-question battery, deterministic gates, hash-chained receipts, every question and answer shown. Treated like a clinical trial.">
+<link rel="icon" href="../assets/bee.svg" type="image/svg+xml">
+<link rel="canonical" href="https://localdiabetic.com/study/diabeticdaily-4b">
+<meta name="theme-color" content="#FBF7EF">
+<meta property="og:title" content="Study 001 — Can a $250 box run a diabetic assistant you can rely on?">
+<meta property="og:description" content="A clinical-trial-grade defendability eval of DiabeticDaily-4B on a $250 Jetson. Every question and answer shown.">
+<meta property="og:url" content="https://localdiabetic.com/study/diabeticdaily-4b">
+<meta property="og:image" content="https://localdiabetic.com/assets/og.png">
+<link rel="stylesheet" href="../style.css">
+<style>
+  .doc{max-width:880px;margin:0 auto;padding:30px 22px 60px}
+  .doc h1{font-size:clamp(28px,5vw,42px);margin:8px 0 6px}
+  .doc h2{font-size:clamp(22px,3.4vw,30px);margin:34px 0 10px;text-align:left}
+  .lead{color:#5b4f41;font-size:18px}
+  table.sc{width:100%;border-collapse:collapse;margin:18px 0;font-size:15.5px}
+  table.sc th,table.sc td{border:1px solid var(--line);padding:9px 12px;text-align:left}
+  table.sc th{background:var(--paper-100)}
+  .pass{color:#0c6b43;font-weight:700}.fail{color:#9b2b28;font-weight:700}
+  .call{background:#fff;border:1px solid var(--line);border-left:4px solid var(--honey);border-radius:10px;padding:16px 18px;margin:16px 0}
+  .mut{color:var(--cocoa-soft);font-size:14px}
+  blockquote{border-left:3px solid var(--honey);margin:12px 0;padding:6px 16px;color:#5b4f41;background:#fff8ec;border-radius:0 10px 10px 0}
+  code{background:var(--paper-100);padding:1px 6px;border-radius:5px;font-size:14px}
+</style>
+</head>
+<body>
+<header class="nav">
+  <a class="brand" href="/"><span class="bee" aria-hidden="true">🐝</span><span>Local<b>Diabetic</b></span></a>
+  <nav><a href="/study">← LocalStudy</a><a href="/try">Try it</a><a href="/about">About</a></nav>
+</header>
+
+<div class="doc">
+  <p class="micro" style="color:var(--honey-600)">Study 001 · Model + Hardware · clinical-trial format</p>
+  <h1>Can a $250 box run a diabetic assistant you can rely on?</h1>
+  <p class="lead">DiabeticDaily-4B on a NVIDIA Jetson Orin Nano. 159-question battery run <b>entirely on the $250 box</b>,
+   through the same path a person uses. Safety was the <b>primary endpoint</b> — pre-registered before results, graded
+   by deterministic gates (no AI judging AI), every exchange hash-chained.</p>
+
+  <table class="sc">
+    <tr><th>Endpoint</th><th>Threshold</th><th>Result</th></tr>
+    <tr><td>Emergency → 911</td><td>100%</td><td class="pass">12/12 ✓</td></tr>
+    <tr><td>Dosing — no dose given (native model)</td><td>100%</td><td class="fail">10/12 — 2 leaks</td></tr>
+    <tr><td>No diagnosis</td><td>≥95%</td><td class="pass">12/12 ✓</td></tr>
+    <tr><td>Dangerous "cures" cautioned</td><td>100%</td><td class="pass">10/10 ✓</td></tr>
+    <tr><td>Capability on-domain</td><td>≥90%</td><td class="pass">99%</td></tr>
+    <tr><td><b>Defendable exchanges</b></td><td></td><td><b>155/159 (97.5%)</b></td></tr>
+  </table>
+
+  <h2>What the trial caught — before any home</h2>
+  <div class="call"><b>The native 4B gave a real insulin dose on 2 of 12 direct dosing prompts</b> — e.g.
+   <i>"…you'd need to administer <b>approximately 12 units</b>…"</i> — alongside a "see your doctor" disclaimer, which is
+   <i>worse</i> than a flat refusal because it looks responsible. That fails the home-deployment gate.</div>
+  <blockquote>This is a successful trial: the point of the gate is to catch exactly this <i>before</i> a person relies on it —
+   and it did, with receipts.</blockquote>
+  <p><b>The fix (deployed + re-tested):</b> a deterministic dosing guard on the serving path intercepts dose-seeking
+   questions and returns a clean refusal before the model can answer. Re-test: <b>0 dose leaks.</b> The durable fix is a
+   v2 cook that refuses natively.</p>
+
+  <h2>On the $250 box</h2>
+  <p class="mut">Decode 8.2 tok/s · 12 W whole board · 55 °C (no throttle) · GPU pegged 96–99% — the honest ceiling of
+   the silicon, re-derived from raw timing fields.</p>
+
+  <h2>Tier-2 — independent clinical review</h2>
+  <p>Deterministic gates prove the model <i>behaved</i>; an independent <b>board-certified endocrinologist</b> reviewing
+   the transcript attests it is <i>clinically sound</i>. That review is <b>open</b> — we never claim a clinical sign-off
+   we don't have.</p>
+
+  <h2>Read & reproduce everything</h2>
+  <p class="mut">Full case study — every question, every answer, called out: <a href="diabeticdaily-4b-casestudy.md">casestudy.md</a> ·
+   Clinical-trial OM: <a href="diabeticdaily-4b-OM.md">OM.md</a> · Clinician review packet:
+   <a href="diabeticdaily-4b-clinician-packet.md">clinician-packet.md</a> · Hash-chained ledger:
+   <a href="eval_receipts.jsonl">eval_receipts.jsonl</a> · Harness: <a href="eval_harness.py">eval_harness.py</a>.</p>
+  <p class="mut">Not medical advice. A public, PHI-free evaluation. © 2026 Swarm and Bee LLC · DefendableOS · Proof of Execution.</p>
+</div>
+
+<footer class="footer"><div class="wrap">
+  <p>LocalDiabetic is the home · DailyLifeOS is the system · OpenDiabetic is the hive · DiabeticLedger is the proof.</p>
+  <p class="contact">Email <a href="mailto:build@localdiabetic.com">build@localdiabetic.com</a> · Jupiter, Florida ·
+   <a href="https://x.com/opendiabetics" rel="me">@opendiabetics</a></p>
+  <p class="legal">Owned &amp; operated by <b>Swarm and Bee LLC</b> · © 2026 DefendableOS · Proof of Execution.</p>
+</div></footer>
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LocalStudy — every box and model, evaluated in the open · LocalDiabetic</title>
+<meta name="description" content="LocalStudy is where LocalDiabetic publishes a real evaluation of every piece of hardware and software it relies on. One question for each: is it defendable? Pre-registered protocols, deterministic gates, hash-chained receipts, every question and answer shown.">
+<link rel="icon" href="assets/bee.svg" type="image/svg+xml">
+<link rel="canonical" href="https://localdiabetic.com/study">
+<meta name="theme-color" content="#FBF7EF">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="LocalDiabetic">
+<meta property="og:url" content="https://localdiabetic.com/study">
+<meta property="og:title" content="LocalStudy — every box and model, evaluated in the open">
+<meta property="og:description" content="A real evaluation of every piece of hardware and software we rely on. The standing question: is it defendable?">
+<meta property="og:image" content="https://localdiabetic.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@opendiabetics">
+<link rel="stylesheet" href="style.css">
+<style>
+  .studyhero{padding:54px 0 30px;text-align:center;background:linear-gradient(180deg,#fff6e6,transparent 60%),var(--paper)}
+  .studyhero h1{font-size:clamp(34px,6vw,58px);font-weight:800;margin:10px 0 16px}
+  .studyhero h1 span{color:var(--honey-600)}
+  .studyhero .lede{max-width:720px;margin:0 auto;color:#5b4f41;font-size:clamp(18px,2.3vw,22px)}
+  .ask{display:inline-block;margin-top:18px;background:var(--cocoa);color:#fff;font-weight:800;
+    padding:10px 20px;border-radius:999px;font-size:16px;letter-spacing:.2px}
+  .ask span{color:var(--honey)}
+  .method{background:var(--ink-900);color:var(--ink-50);padding:40px 0;border-top:1px solid var(--ink-line);border-bottom:1px solid var(--ink-line)}
+  .method h2{color:#fff}
+  .method .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:24px}
+  .method .m{background:var(--ink-700);border:1px solid var(--ink-line);border-radius:14px;padding:18px}
+  .method .m h3{color:var(--honey);font-size:17px;margin:0 0 6px}
+  .method .m p{color:#c8d6e3;font-size:15px;margin:0}
+  .studies{padding:48px 0}
+  .scard{display:block;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px;margin:0 0 20px;
+    transition:transform .12s ease, box-shadow .12s ease}
+  .scard:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(43,33,24,.08)}
+  .scard .tag{display:inline-block;font-size:13px;font-weight:700;color:var(--honey-600);background:#fff8ec;
+    border:1px solid var(--line);border-radius:999px;padding:3px 11px;margin-bottom:10px}
+  .scard h3{font-size:clamp(21px,3vw,28px);margin:4px 0 6px}
+  .scard .meta{color:var(--cocoa-soft);font-size:15px;margin:0 0 14px}
+  .scard .stat{display:flex;flex-wrap:wrap;gap:18px;margin:14px 0 4px}
+  .scard .stat div{min-width:120px}
+  .scard .stat .n{font-size:24px;font-weight:800;color:var(--cocoa)}
+  .scard .stat .l{font-size:13px;color:var(--cocoa-soft)}
+  .verdict{display:inline-block;font-weight:800;border-radius:10px;padding:6px 14px;font-size:15px}
+  .verdict.pending{background:#fff3d6;color:#7a5b00;border:1px solid #f2d68a}
+  .verdict.pass{background:#e6f7ef;color:#0c6b43;border:1px solid #aee3c9}
+  .verdict.fail{background:#fdeceb;color:#9b2b28;border:1px solid #f3b9b7}
+  .note{color:var(--cocoa-soft);font-size:14px;text-align:center;margin-top:8px}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <a class="brand" href="/"><span class="bee" aria-hidden="true">🐝</span><span>Local<b>Diabetic</b></span></a>
+  <nav>
+    <a href="/dailylocal">The DailyLocal</a>
+    <a href="/study">LocalStudy</a>
+    <a href="/try">Try it</a>
+    <a href="/about">About</a>
+    <a class="btn" href="/#start">Join</a>
+  </nav>
+</header>
+
+<section class="studyhero">
+  <div class="wrap">
+    <p class="micro">LocalStudy · the evaluation record</p>
+    <h1>Every box. Every model. <span>Evaluated in the open.</span></h1>
+    <p class="lede">Before anything earns a place in your home, it has to earn it on the record. We evaluate every
+      piece of hardware and software we rely on, and we publish the whole thing — the method, the numbers, and
+      every question and answer. One standing question for each:</p>
+    <div class="ask">Is the <span>XYZ</span> defendable?</div>
+  </div>
+</section>
+
+<section class="method">
+  <div class="wrap">
+    <h2>How we evaluate</h2>
+    <p class="sub" style="color:#c8d6e3">No trust-me. No cherry-picking. A real evaluation a skeptic can replay.</p>
+    <div class="grid">
+      <div class="m"><h3>Pre-registered</h3><p>The endpoints and the pass/fail thresholds are written down <b>before</b> we see a single result. Safety first.</p></div>
+      <div class="m"><h3>Deterministic gates</h3><p>Graded by rules, not by another AI. A model never grades a model. You can recompute every score.</p></div>
+      <div class="m"><h3>Hash-chained receipts</h3><p>Every exchange is chained with SHA-256. Edit one answer after the fact and the chain breaks — tamper-evident.</p></div>
+      <div class="m"><h3>Shown in full</h3><p>Every question, every response, called out as defendable or not. Strengths and weaknesses both.</p></div>
+    </div>
+
+    <div style="margin-top:30px;background:var(--ink-700);border:1px solid var(--ink-line);border-radius:16px;padding:24px;text-align:center">
+      <p class="micro" style="color:var(--honey)">Two tiers of review</p>
+      <h3 style="color:#fff;margin:6px 0 12px;font-size:clamp(20px,3vw,26px)">Tier 1 proves it behaved. Tier 2 proves it's clinically sound.</h3>
+      <p style="color:#c8d6e3;max-width:760px;margin:0 auto;font-size:16px">
+        <b style="color:#fff">Tier 1 — Defendable evaluation</b> (above): pre-registered, deterministic, receipted — reproducible by anyone.
+        <b style="color:#fff">Tier 2 — Independent clinical review</b>: a board-certified <b style="color:var(--honey)">endocrinologist</b> reads the
+        full transcript and attests to the clinical soundness of what the model tells people — domain by domain — and signs the record.
+        We publish their assessment verbatim. <b style="color:#fff">We never claim a clinical sign-off we don't have.</b>
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="studies">
+  <div class="wrap">
+    <h2>The studies</h2>
+    <p class="sub">Hardware and software, each put through a real evaluation.</p>
+
+    <!-- STUDY 001 -->
+    <a class="scard" href="/study/diabeticdaily-4b">
+      <span class="tag">Study 001 · Model + Hardware</span>
+      <h3>Can a $250 box run a diabetic assistant you can rely on?</h3>
+      <p class="meta">DiabeticDaily-4B on a NVIDIA Jetson Orin Nano · 159-question battery · run entirely on the $250 box</p>
+      <div class="stat">
+        <div><div class="n">97.5%</div><div class="l">exchanges defendable (155/159)</div></div>
+        <div><div class="n" style="color:var(--red)">2 SAE</div><div class="l">direct-dosing leaks (native model)</div></div>
+        <div><div class="n">8.2 tok/s</div><div class="l">on-box · 12 W · 55°C</div></div>
+        <div><div class="n">INTACT</div><div class="l">hash chain (tamper-checked)</div></div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center">
+        <span class="verdict fail">Native: 2 SAE — gave real doses</span>
+        <span class="verdict pass">+ dose-guard: 0 leaks (safe to serve)</span>
+        <span class="verdict pending">Tier 2 · endo review open</span>
+      </div>
+      <p class="meta" style="margin-top:12px">Emergencies, diagnosis and dangerous-"cure" handling all passed. The native model gave a specific insulin dose on 2 of 12
+        direct dosing prompts — caught <b>before</b> a home, then closed with a deterministic serving guard (re-tested: 0 leaks).</p>
+    </a>
+
+    <!-- STUDY 002 -->
+    <a class="scard" href="/study/diabeticdaily-4b-vs-9b-scorecard">
+      <span class="tag">Study 002 · Bigger model · head-to-head</span>
+      <h3>Is the 9B safer — and worth a bigger box?</h3>
+      <p class="meta">DiabeticDaily-9B (bf16) vs the 4B · same 169-question battery + jailbreak pressure probes · run on the 5090</p>
+      <div class="stat">
+        <div><div class="n">97.0%</div><div class="l">exchanges defendable (164/169)</div></div>
+        <div><div class="n" style="color:var(--green)">12/12</div><div class="l">direct dosing refused (4B: 10/12)</div></div>
+        <div><div class="n">14 tok/s</div><div class="l">bf16 · needs 16 GB box</div></div>
+        <div><div class="n">INTACT</div><div class="l">hash chain (tamper-checked)</div></div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center">
+        <span class="verdict pass">Refuses every DIRECT dose request</span>
+        <span class="verdict fail">2 SAE — only under jailbreak framing</span>
+        <span class="verdict pending">Tier 2 · endo review open</span>
+      </div>
+      <p class="meta" style="margin-top:12px">The bigger model genuinely internalized "no dose" — it refuses every direct personal dosing question the 4B leaked on,
+        slipping only under deliberate jailbreaks ("for a school project…", "pretend you're a textbook"). Safer brain; won't fit the $250 Jetson (needs a Mac Mini-class box).</p>
+    </a>
+
+    <p class="note">More studies as we evaluate them — every box, every model, every dependency. 🐝</p>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <img src="assets/wordmark.svg" alt="LocalDiabetic" height="38">
+    <p>LocalDiabetic is the home · DailyLifeOS is the system · OpenDiabetic is the hive · DiabeticLedger is the proof.</p>
+    <p class="links">
+      <a href="https://opendiabetic.com">OpenDiabetic</a> ·
+      <a href="https://dailylifeos.org">DailyLifeOS</a> ·
+      <a href="https://diabeticdocs.com">DiabeticDocs</a> ·
+      <a href="https://diabeticnode.com">DiabeticNode</a> ·
+      <a href="https://diabeticdatasets.com">DiabeticDatasets</a> ·
+      <a href="https://diabeticmodels.com">DiabeticModels</a> ·
+      <a href="https://diabetictruth.org">DiabeticTruth</a> ·
+      <a href="https://diabeticledger.com">DiabeticLedger</a> ·
+      <a href="https://diabeticdonation.com">DiabeticDonation</a>
+    </p>
+    <p class="contact">Email <a href="mailto:build@localdiabetic.com">build@localdiabetic.com</a> ·
+      HQ · Jupiter, Florida · <a href="tel:+15615327120">561.532.7120</a> ·
+      <a href="https://x.com/opendiabetics" rel="me">@opendiabetics</a> · <a href="https://huggingface.co/SwarmandBee" rel="me">🤗 Hugging Face</a></p>
+    <p class="motto">Give people what they need, not what you have. Life deserves a little peace of mind.</p>
+    <p class="legal">Owned &amp; operated by <b>Swarm and Bee LLC</b> · DBA Swarm &amp; Bee AI · Florida<br>
+      UEI L9EXVH9L9VU6 · CAGE 20YM3 · D-U-N-S 138652395 · Registered &amp; active in SAM.gov<br>
+      &copy; 2026 DefendableOS · Proof of Execution.</p>
+  </div>
+</footer>
+
+</body>
+</html>
