@@ -34,8 +34,8 @@ No noise. No hype. Just useful progress.
 
 Thanks for being early.
 
-— Donovan
-OpenDiabetic / LocalDiabetic
+— Donovan Mackey
+Type 1 Diabetic · building LocalDiabetic one day at a time
 
 —
 You're getting this because you signed up at localdiabetic.com. This is general support, not medical advice. Reply anytime to unsubscribe.`;
@@ -59,7 +59,7 @@ const WELCOME_HTML = `<div style="font-family:-apple-system,Segoe UI,Roboto,Helv
   </ul>
   <p>No noise. No hype. Just useful progress.</p>
   <p>Thanks for being early.</p>
-  <p>— Donovan<br><span style="color:#6b5e4f">OpenDiabetic / LocalDiabetic</span></p>
+  <p>— Donovan Mackey<br><span style="color:#6b5e4f">Type 1 Diabetic · building LocalDiabetic one day at a time</span></p>
   <hr style="border:0;border-top:1px solid #ece3d2;margin:22px 0">
   <p style="font-size:12px;color:#9b8e7c">You're getting this because you signed up at localdiabetic.com. General support, not medical advice. Reply anytime to unsubscribe.</p>
 </div>`;
