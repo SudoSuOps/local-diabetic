@@ -10,5 +10,16 @@
     "captionsUrl": "/assets/shorts/know-your-numbers.vtt",
     "publishedAt": "2026-06-24",
     "youtubeUrl": "https://www.youtube.com/shorts/K0sOVNgmO60"
+  },
+  {
+    "id": "foot-care",
+    "slug": "foot-care",
+    "title": "Look at Your Feet",
+    "topic": "Daily foot check",
+    "videoUrl": "/assets/shorts/look-at-your-feet.mp4?v=1",
+    "posterUrl": "/assets/shorts/look-at-your-feet-poster.jpg",
+    "durationSec": 65,
+    "captionsUrl": "/assets/shorts/look-at-your-feet.vtt",
+    "publishedAt": "2026-06-24"
   }
 ]
