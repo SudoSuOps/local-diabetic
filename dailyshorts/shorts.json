@@ -92,6 +92,18 @@
     "posterUrl": "/assets/shorts/diabetes-eye-check-poster.jpg",
     "durationSec": 64,
     "captionsUrl": "/assets/shorts/diabetes-eye-check.vtt",
+    "publishedAt": "2026-06-24",
+    "youtubeUrl": "https://www.youtube.com/shorts/o1Ezv9WBx9s"
+  },
+  {
+    "id": "daily-movement",
+    "slug": "daily-movement",
+    "title": "Daily Movement",
+    "topic": "Move every day",
+    "videoUrl": "/assets/shorts/daily-movement.mp4?v=1",
+    "posterUrl": "/assets/shorts/daily-movement-poster.jpg",
+    "durationSec": 66,
+    "captionsUrl": "/assets/shorts/daily-movement.vtt",
     "publishedAt": "2026-06-24"
   }
 ]
