@@ -80,6 +80,18 @@
     "posterUrl": "/assets/shorts/the-diabetes-vault-poster.jpg",
     "durationSec": 66,
     "captionsUrl": "/assets/shorts/the-diabetes-vault.vtt",
+    "publishedAt": "2026-06-24",
+    "youtubeUrl": "https://www.youtube.com/shorts/zV3JsBjDCs4"
+  },
+  {
+    "id": "eye-check",
+    "slug": "eye-check",
+    "title": "Diabetes Eye Check",
+    "topic": "Protect your vision",
+    "videoUrl": "/assets/shorts/diabetes-eye-check.mp4?v=1",
+    "posterUrl": "/assets/shorts/diabetes-eye-check-poster.jpg",
+    "durationSec": 64,
+    "captionsUrl": "/assets/shorts/diabetes-eye-check.vtt",
     "publishedAt": "2026-06-24"
   }
 ]
