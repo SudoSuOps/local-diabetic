@@ -46,5 +46,27 @@
     "captionsUrl": "/assets/shorts/eat-to-win.vtt",
     "publishedAt": "2026-06-24",
     "youtubeUrl": "https://www.youtube.com/shorts/wN9Slzft9Rw"
+  },
+  {
+    "id": "one-daily-win",
+    "slug": "one-daily-win",
+    "title": "One Daily Win",
+    "topic": "The everyday win",
+    "videoUrl": "/assets/shorts/one-daily-win.mp4?v=1",
+    "posterUrl": "/assets/shorts/one-daily-win-poster.jpg",
+    "durationSec": 64,
+    "captionsUrl": "/assets/shorts/one-daily-win.vtt",
+    "publishedAt": "2026-06-24"
+  },
+  {
+    "id": "ownership-win",
+    "slug": "ownership-win",
+    "title": "The Ownership Win",
+    "topic": "Private by default",
+    "videoUrl": "/assets/shorts/the-ownership-win.mp4?v=1",
+    "posterUrl": "/assets/shorts/the-ownership-win-poster.jpg",
+    "durationSec": 65,
+    "captionsUrl": "/assets/shorts/the-ownership-win.vtt",
+    "publishedAt": "2026-06-24"
   }
 ]
