@@ -37,6 +37,15 @@ export async function onRequestPost({ request, env }) {
     if (await kv.get("pforder:" + sid)) return new Response("dup", { status: 200 });
   }
 
+  // donations ("pay it forward") — never fulfilled via Printful; just a grateful receipt.
+  if (s.metadata?.kind === "donation") {
+    if (kv) await kv.put("donation:" + sid, JSON.stringify({
+      amount: s.amount_total, currency: s.currency,
+      email: s.customer_details?.email || "", at: Date.now(),
+    }), { expirationTtl: 31536000 });
+    return new Response("donation — thank you", { status: 200 });
+  }
+
   const ship = s.shipping_details || s.collected_information?.shipping_details ||
                { name: s.customer_details?.name, address: s.customer_details?.address };
   const a = ship.address || {};
