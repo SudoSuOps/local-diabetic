@@ -3,6 +3,6 @@
   "private": true,
   "description": "LocalDiabetic member front door \u2014 static, no dependencies",
   "scripts": {
-    "build": "rm -rf dist && mkdir -p dist && cp -r index.html try.html about.html study.html study dailylocal style.css assets robots.txt sitemap.xml llms.txt dist/ && echo built"
+    "build": "rm -rf dist && mkdir -p dist && cp -r index.html try.html about.html study.html study dailylocal style.css assets favicon localdiabetic-og.png robots.txt sitemap.xml llms.txt dist/ && echo built"
   }
 }

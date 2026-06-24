@@ -3,327 +3,450 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>LocalDiabetic — your diabetic life, organized on a box you own</title>
-<meta name="description" content="LocalDiabetic puts your records, reminders, and a diabetic-smart brain on a small box in your own home — organized, private, free. Powered by DailyLifeOS and the proven DiabeticDaily models. Your information never leaves your house. Built by a Type 1 diabetic.">
-<link rel="icon" href="assets/bee.svg" type="image/svg+xml">
+<title>LocalDiabetic — your diabetic life, organized at home</title>
+<meta name="description" content="A private, free, at-home diabetic-life organizer. Records, reminders, and a small on-box AI brain that never leaves your house. Built by a Type 1 diabetic.">
 <link rel="canonical" href="https://localdiabetic.com/">
 <meta name="robots" content="index,follow,max-image-preview:large">
-<meta name="theme-color" content="#FBF7EF">
-<meta name="author" content="LocalDiabetic">
-<meta name="keywords" content="diabetic life organizer, diabetes reminders, diabetic foot care, private health records, on-box AI, edge AI diabetes, diabetes home appliance, self-hosted health, type 1 diabetes, type 2 diabetes">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="LocalDiabetic">
 <meta property="og:url" content="https://localdiabetic.com/">
-<meta property="og:title" content="LocalDiabetic — your diabetic life, organized on a box you own">
-<meta property="og:description" content="Records, reminders, and a proven diabetic-smart brain on a box in your own home. Private, free, yours. Records never leave home.">
-<meta property="og:image" content="https://localdiabetic.com/assets/og.png">
-<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="LocalDiabetic — your diabetic life, organized on a box you own">
-<meta property="og:locale" content="en_US">
-<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@opendiabetics">
-<meta name="twitter:title" content="LocalDiabetic — your diabetic life, organized on a box you own">
-<meta name="twitter:description" content="Records, reminders, and a proven diabetic brain on a box in your home. Private, free, yours.">
-<meta name="twitter:image" content="https://localdiabetic.com/assets/og.png">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": "https://localdiabetic.com/#org",
-      "name": "LocalDiabetic",
-      "url": "https://localdiabetic.com",
-      "logo": "https://localdiabetic.com/assets/icon.svg",
-      "image": "https://localdiabetic.com/assets/og.png",
-      "description": "A private, free home system for diabetic records, reminders, and an on-box diabetic AI brain — records never leave home. Runs DailyLifeOS and the proven DiabeticDaily models. Built by a Type 1 diabetic. It organizes and reminds; it is not medical advice and does not replace a doctor.",
-      "slogan": "Diabetes is a 24/7 job. You don't have to carry it alone.",
-      "isPartOf": { "@type": "NGO", "name": "OpenDiabetic", "url": "https://opendiabetic.com" },
-      "founder": { "@type": "Person", "name": "Donovan Mackey", "description": "Type 1 diabetic living the full continuum; builds LocalDiabetic from lived experience." },
-      "foundingLocation": { "@type": "Place", "name": "Jupiter, Florida, USA" },
-      "address": { "@type": "PostalAddress", "addressLocality": "Jupiter", "addressRegion": "FL", "addressCountry": "US" },
-      "email": "build@localdiabetic.com",
-      "telephone": "+1-561-532-7120",
-      "sameAs": ["https://x.com/opendiabetics", "https://opendiabetic.com", "https://dailylifeos.org", "https://diabeticdocs.com", "https://diabeticnode.com", "https://diabeticdatasets.com", "https://diabeticmodels.com", "https://diabetictruth.org", "https://diabeticledger.com", "https://diabeticdonation.com", "https://huggingface.co/SwarmandBee", "https://github.com/SudoSuOps"],
-      "knowsAbout": ["diabetes self-management", "diabetic foot care", "medication reminders", "private health records", "on-box AI", "edge AI"],
-      "disambiguatingDescription": "Not a medical provider or device. Organizes records, sends reminders, and helps prepare for appointments; always advises confirming medical decisions with a clinician.",
-      "parentOrganization": {
-        "@type": "Organization", "name": "Swarm and Bee LLC", "legalName": "Swarm and Bee LLC", "alternateName": "Swarm & Bee AI",
-        "address": { "@type": "PostalAddress", "addressRegion": "FL", "addressCountry": "US" },
-        "identifier": [
-          { "@type": "PropertyValue", "propertyID": "SAM UEI", "value": "L9EXVH9L9VU6" },
-          { "@type": "PropertyValue", "propertyID": "CAGE", "value": "20YM3" },
-          { "@type": "PropertyValue", "propertyID": "DUNS", "value": "138652395" }
-        ]
-      }
-    },
-    {
-      "@type": "WebSite", "@id": "https://localdiabetic.com/#website", "url": "https://localdiabetic.com",
-      "name": "LocalDiabetic", "description": "Your diabetic life, organized and private — on a box you own, free.",
-      "publisher": { "@id": "https://localdiabetic.com/#org" }, "inLanguage": "en-US"
-    }
-  ]
-}
-</script>
-<link rel="stylesheet" href="style.css">
+<!-- ============================================================
+     LocalDiabetic 🐝 — drop-in <head> tags
+     Place the contents of /favicon/ at your site root (or adjust paths).
+     ============================================================ -->
+
+<!-- Classic favicon (multi-res: 16/32/48) -->
+<link rel="icon" href="/favicon/favicon.ico" sizes="any">
+
+<!-- Modern SVG favicon (crisp at any size; preferred where supported) -->
+<link rel="icon" type="image/svg+xml" href="/favicon/bee.svg">
+
+<!-- PNG fallbacks -->
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon/bee-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon/bee-32.png">
+
+<!-- iOS / iPadOS home-screen icon (use the cream tile so it reads on any wallpaper) -->
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon/appicon-cream-180.png">
+
+<!-- Theme color (honey) for mobile browser chrome -->
+<meta name="theme-color" content="#F2B441">
+
+<!-- ---------- Open Graph / social sharing ---------- -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="LocalDiabetic — your diabetic life, organized at home">
+<meta property="og:description" content="A private, free, at-home diabetic-life organizer. Records, reminders, and a small on-box AI brain that never leaves your house.">
+<meta property="og:image" content="/localdiabetic-og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- ---------- Twitter / X ---------- -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="LocalDiabetic — your diabetic life, organized at home">
+<meta name="twitter:description" content="Private · free · runs on a little box at home.">
+<meta name="twitter:image" content="/localdiabetic-og.png">
+
+<!-- ---------- PWA manifest (optional; see site.webmanifest below) ---------- -->
+<link rel="manifest" href="/favicon/site.webmanifest">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  html{scroll-behavior:smooth;}
+  body{margin:0;padding:0;background:#FBF7EF;}
+  *{box-sizing:border-box;}
+  @keyframes ld-pulse{0%,100%{opacity:.6;}50%{opacity:1;}}
+  a{color:inherit;}
+</style>
+<style>input:focus,textarea:focus{border-color:#F2B441 !important;outline:none}</style>
 </head>
 <body>
+<div style="font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#FBF7EF;color:#2B2118;-webkit-font-smoothing:antialiased;line-height:1.65;">
 
-<header class="nav">
-  <a class="brand" href="/"><span class="bee" aria-hidden="true">🐝</span><span>Local<b>Diabetic</b></span></a>
-  <nav>
-    <a href="/dailylocal">The DailyLocal</a>
-    <a href="#brain">The brain</a>
-    <a href="/study">LocalStudy</a>
-    <a href="/try">Try it</a>
-    <a href="/about">About</a>
-    <a href="#news">Subscribe</a>
-    <a class="btn" href="#start">Join</a>
-  </nav>
+  <header style="position:sticky;top:0;z-index:50;background:rgba(251,247,239,.85);backdrop-filter:blur(12px);border-bottom:1px solid #ece3d2;font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;">
+  <div style="max-width:1140px;margin:0 auto;padding:13px 24px;display:flex;align-items:center;justify-content:space-between;gap:24px;">
+    <a href="/" style="display:flex;align-items:center;gap:11px;text-decoration:none;">
+      <svg width="30" height="33" viewBox="0 0 120 132" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block;overflow:visible">
+        <path d="M54 20 C48 6 41 3 34 5" stroke="#2B2118" stroke-width="4.2" stroke-linecap="round"></path><path d="M66 20 C72 6 79 3 86 5" stroke="#2B2118" stroke-width="4.2" stroke-linecap="round"></path><circle cx="33" cy="5" r="4.4" fill="#F2B441" stroke="#2B2118" stroke-width="3"></circle><circle cx="87" cy="5" r="4.4" fill="#F2B441" stroke="#2B2118" stroke-width="3"></circle><ellipse cx="36" cy="54" rx="19" ry="26" fill="#FCE4B0" stroke="#2B2118" stroke-width="4.2" transform="rotate(-24 36 54)"></ellipse><ellipse cx="84" cy="54" rx="19" ry="26" fill="#FCE4B0" stroke="#2B2118" stroke-width="4.2" transform="rotate(24 84 54)"></ellipse><rect x="40" y="44" width="40" height="72" rx="20" fill="#F2B441" stroke="#2B2118" stroke-width="4.2"></rect><g clip-path="url(#hbk)"><rect x="36" y="66" width="48" height="12" fill="#2B2118"></rect><rect x="36" y="90" width="48" height="12" fill="#2B2118"></rect></g><clipPath id="hbk"><rect x="40" y="44" width="40" height="72" rx="20"></rect></clipPath><circle cx="60" cy="31" r="17" fill="#2B2118"></circle><circle cx="53" cy="29" r="3.4" fill="#FBF7EF"></circle><circle cx="67" cy="29" r="3.4" fill="#FBF7EF"></circle>
+      </svg>
+      <span style="font-size:19px;letter-spacing:-0.3px;"><span style="font-weight:600;color:#2B2118;">Local</span><span style="font-weight:800;color:#D99A2B;">Diabetic</span></span>
+    </a>
+    <nav style="display:flex;align-items:center;gap:26px;font-size:14.5px;font-weight:500;color:#6b5e4f;">
+      <a href="/dailylocal" style="text-decoration:none;" data-h="color:#2B2118;">The DailyLocal</a>
+      <a href="/study" style="text-decoration:none;" data-h="color:#2B2118;">LocalStudy</a>
+      <a href="/try" style="text-decoration:none;" data-h="color:#2B2118;">Try it</a>
+      <a href="/about" style="text-decoration:none;" data-h="color:#2B2118;">About</a>
+      <a href="/#start" style="text-decoration:none;background:#F2B441;color:#1a1205;font-weight:800;padding:9px 18px;border-radius:11px;box-shadow:0 6px 16px -9px rgba(217,154,43,.8);" data-h="background:#e9aa31;">Join</a>
+    </nav>
+  </div>
 </header>
 
-<section class="hero">
-  <div class="wrap">
-    <img class="wordmark" src="assets/wordmark.svg" alt="LocalDiabetic" height="56">
-    <h1>Diabetes is a 24/7 job.<br><span>You don't have to carry it alone.</span></h1>
-    <p class="lede">LocalDiabetic puts your records, your reminders, and a <b>diabetic-smart helper</b> on a
-      little box in your own home — <b>organized, private, and free.</b> Your information never leaves
-      your house. We just help you carry the day.</p>
-    <div class="cta">
-      <a class="btn big" href="/try">Try the model free →</a>
-      <a class="btn ghost big" href="#start">Join the first members</a>
-      <a class="btn ghost big" href="#lifeboard">See the LifeBoard</a>
-    </div>
-    <p class="micro">Free to you · Your data never leaves home · A proven diabetic brain, on a box you own</p>
-  </div>
-  <div class="hero-glow" aria-hidden="true"></div>
-</section>
-
-<section class="reassure">
-  <div class="wrap">
-    <p>You come home from the hospital and everything is scattered — the new medications, the discharge
-      papers, the supply boxes, the appointment cards, the bills. It's a lot, and it's lonely.
-      <b>LocalDiabetic gives it all order, and gives you a hand.</b></p>
-  </div>
-</section>
-
-<!-- THE LIFEBOARD -->
-<section id="lifeboard" class="section">
-  <div class="wrap">
-    <h2>The LifeBoard — the screen you wake up to</h2>
-    <p class="sub">Open it in the morning and your whole diabetic day is right there — no digging through
-      ten apps, an inbox, and a drawer. Everything in one calm place.</p>
-    <div class="lifeboard">
-      <div class="lb"><h4>📅 Next appointment</h4><p>Podiatry, Dr. Greene — <b>in 3 days</b></p></div>
-      <div class="lb"><h4>💊 Today's meds</h4><p>Insulin · Metformin — <b>nudged on time</b></p></div>
-      <div class="lb"><h4>🍎 Food today</h4><p>3 meals planned · <b>95g carbs</b></p></div>
-      <div class="lb"><h4>🏃 Move today</h4><p>Walk <b>30/30 min</b> · 4,200 steps</p></div>
-      <div class="lb"><h4>🩸 A1C trend</h4><p><b>6.9%</b> <span class="dn">↓ from 7.4</span></p></div>
-      <div class="lb"><h4>🔔 Notifications</h4><p>Foot check tonight 👣 · <b>phone + watch</b></p></div>
-      <div class="lb"><h4>📱 Synced devices</h4><p>iPhone · <b>⌚ Apple Watch</b></p></div>
-      <div class="lb"><h4>📦 Supplies</h4><p>Test strips <span class="lo">running low ⚠️</span></p></div>
-      <div class="lb"><h4>🆘 Emergency</h4><p>One tap → your people</p></div>
-    </div>
-    <p class="src center"><em>Above: an example.</em> Every card is built from <b>your own records</b> —
-      no guessing, just the facts, on your box. <a href="https://dailylifeos.org/lifeboard.html">See a live sample LifeBoard →</a></p>
-  </div>
-</section>
-
-<section id="help" class="section soft">
-  <div class="wrap">
-    <h2>What it does for you</h2>
-    <p class="sub">Simple, warm, built for real life — with big text and easy steps for anyone who needs them.</p>
-    <div class="cards">
-      <div class="card"><div class="ic">⏰</div><h3>Reminders that find you</h3>
-        <p>Meds, foot checks, appointments, supplies — gentle nudges to your phone and watch, 24/7, so
-           nothing important slips. <span class="live">live today</span></p></div>
-      <div class="card"><div class="ic">🔒</div><h3>Your records, safe at home</h3>
-        <p>One private place for everything — on your own box, in your own house. We never see it, never
-           sell it, never share it.</p></div>
-      <div class="card"><div class="ic">👣</div><h3>The daily foot check</h3>
-        <p>The two-minute habit that saves toes — a guided check, a place to track it, a photo timeline,
-           and a nudge every day. Feet come first.</p></div>
-      <div class="card"><div class="ic">🤝</div><h3>A hand for your family</h3>
-        <p>If you go quiet when something matters, someone who loves you gets a gentle check-in. Nobody
-           falls through alone.</p></div>
-      <div class="card"><div class="ic">💬</div><h3>A helper that understands diabetes</h3>
-        <p>Ask it to explain a lab result, plan a diabetic-friendly meal, draft an insurance appeal, or
-           prep your questions for the doctor — privately, on your box. It never plays doctor.</p></div>
-      <div class="card"><div class="ic">❤️</div><h3>Care when life gets hard</h3>
-        <p>As we open our doors: a ride to the appointment, a pair of diabetic shoes, supplies when money's
-           tight — real help, free, no strings.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- THE BRAIN (the proven models) -->
-<section id="brain" class="section dark">
-  <div class="wrap">
-    <h2>Not a generic chatbot — a brain that actually knows diabetes</h2>
-    <p class="sub">The helper inside LocalDiabetic runs on <b>DiabeticDaily</b> — AI models we cooked
-      ourselves on cited diabetic and medical data, and <b>proved</b> they understand the domain better
-      than the model they started from. Open for anyone to check.</p>
-    <div class="ladder">
-      <div class="rung"><b>DiabeticDaily-27B</b><span>+57% better<small>than its base, on held-out medical text</small></span></div>
-      <div class="rung"><b>DiabeticDaily-9B</b><span>+40.7% better<small>the home-box tier</small></span></div>
-      <div class="rung hi"><b>DiabeticDaily-4B</b><span>+40.4% better<small>runs on a tiny box, on-box</small></span></div>
-    </div>
-    <p class="line">Proven, not promised — the receipts are public. Cooked once on our own compute, then
-      shrunk down small enough to run on the box in your house. <a href="https://huggingface.co/SwarmandBee">See the models on Hugging Face →</a></p>
-    <p class="line"><a class="btn big" href="/try">Try DiabeticDaily free →</a></p>
-  </div>
-</section>
-
-<!-- THE BOX + FIREWALL -->
-<section id="box" class="section">
-  <div class="wrap">
-    <h2>It lives on a little box in your house</h2>
-    <p class="sub">A small computer you own — a Jetson on the nightstand, a home server, a mini-PC. The brain
-      runs <b>right there, on the box</b>. No cloud. No internet needed. No monthly bill.</p>
-    <div class="firewall-home">
-      <div class="fw-card">
-        <h3>🏠 Your box</h3>
-        <p>Your records, your photos, your reminders — all on hardware you own. The diabetic brain runs
-          on it, answers you on it, and <b>nothing private ever leaves it.</b></p>
+  <!-- ============ HERO ============ -->
+  <section id="top" style="position:relative;overflow:hidden;">
+    <div style="position:absolute;top:-120px;left:50%;width:1100px;height:760px;transform:translateX(-50%);background:radial-gradient(circle,rgba(242,180,65,.20) 0%,rgba(242,180,65,.06) 40%,transparent 66%);pointer-events:none;"></div>
+    <div style="position:relative;max-width:900px;margin:0 auto;padding:96px 24px 84px;text-align:center;">
+      <div style="display:inline-flex;align-items:center;gap:8px;background:#FBF0D8;border:1px solid #F0DCA8;border-radius:999px;padding:7px 16px;font-size:13px;font-weight:600;color:#9a6e15;margin-bottom:30px;">🐝 Built by a Type 1 diabetic, one day at a time</div>
+      <h1 style="font-weight:800;font-size:clamp(40px,6.5vw,72px);letter-spacing:-1.8px;line-height:1.04;margin:0 0 24px;text-wrap:balance;">Diabetes is a 24/7 job. You don’t have to carry it <span style="color:#D99A2B;">alone</span>.</h1>
+      <p style="font-size:20px;line-height:1.6;color:#6b5e4f;max-width:60ch;margin:0 auto 36px;">LocalDiabetic puts your records, your reminders, and a diabetic-smart helper on a little box in your own home — organized, private, and free. Your information never leaves your house. We just help you carry the day.</p>
+      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+        <a href="#start" style="text-decoration:none;background:#F2B441;color:#1a1205;font-weight:800;font-size:17px;padding:16px 30px;border-radius:13px;box-shadow:0 8px 20px -8px rgba(217,154,43,.8);" data-h="background:#e9aa31;">Join the first members</a>
+        <a href="#lifeboard" style="text-decoration:none;background:#fff;color:#2B2118;font-weight:700;font-size:17px;padding:15px 28px;border-radius:13px;border:1.5px solid #F2B441;" data-h="background:#FBF3E2;">See the LifeBoard</a>
       </div>
-      <div class="fw-line">
-        <span>updates come in ▾</span>
-        <span class="never">your records go out — NEVER</span>
-      </div>
-      <div class="fw-card hive">
-        <h3>🐝 The hive</h3>
-        <p>OpenDiabetic cooks the models and sends them down to your box. It only ever receives a plain
-          "done" receipt — never anything about you.</p>
+      <div style="display:flex;gap:22px;justify-content:center;flex-wrap:wrap;margin-top:30px;font-size:14px;color:#9b8d7b;">
+        <span>Free to you</span><span style="color:#e0d3bd;">·</span><span>Your data never leaves home</span><span style="color:#e0d3bd;">·</span><span>A proven brain, on a box you own</span>
       </div>
     </div>
-    <p class="line">That's the one promise we build in code: <b>PHI never leaves your box.</b> It's the whole
-      reason LocalDiabetic exists. <a href="https://dailylifeos.org">It runs on DailyLifeOS →</a></p>
-  </div>
-</section>
+  </section>
 
-<section id="promise" class="section promise">
-  <div class="wrap">
-    <h2>Our promise to you</h2>
-    <div class="pillars">
-      <div><b>Free</b><span>It costs you nothing. The compute pays for it, so you never have to. No charge, no strings, no catch.</span></div>
-      <div><b>Private</b><span>Your records never leave your home. Not to us, not to the cloud, not to anyone. You hold the keys.</span></div>
-      <div><b>A hand on your shoulder</b><span>Reminders when you need them, family when it matters, real help when life gets hard. You're not alone.</span></div>
+  <!-- ============ EMPATHY BAND ============ -->
+  <section style="background:#F3ECDD;border-top:1px solid #ece3d2;border-bottom:1px solid #ece3d2;">
+    <div style="max-width:820px;margin:0 auto;padding:56px 24px;text-align:center;">
+      <p style="font-size:22px;line-height:1.55;color:#2B2118;margin:0;font-weight:500;text-wrap:pretty;">You come home from the hospital and everything is scattered — the new medications, the discharge papers, the supply boxes, the appointment cards, the bills. It’s a lot, and it’s lonely. <span style="color:#D99A2B;font-weight:700;">LocalDiabetic gives it all order, and gives you a hand.</span></p>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="story" class="section story">
-  <div class="wrap">
-    <h2>Built by someone who's been where you are</h2>
-    <blockquote>
-      <p>“I'm a Type 1 diabetic, and I call it a gift. It lives with me 24/7 — and I've <b>won big</b> at this life. I've been through the surgeries and the hospital stays and come through every one of them standing. So I built the thing I needed, and the thing you need — <b>to win too.</b> Give people what they need, not what you have. And it costs you nothing.”</p>
-      <cite>— Donovan · Type 1 Diabetic · building LocalDiabetic one day at a time</cite>
-    </blockquote>
-    <p class="note">LocalDiabetic isn't built by a company looking at a market. It's built from lived
-      experience, for real people, with a promise you can check yourself. <a href="/about">Read Donovan's story →</a></p>
-  </div>
-</section>
-
-<section id="start" class="section start">
-  <div class="wrap">
-    <h2>We're opening our doors</h2>
-    <p class="sub">We're welcoming our first members now. Tell us a little about what you need — whether it's
-       for you or for someone you love — and we'll reach out personally.</p>
-    <div class="who">
-      <div class="card"><h3>For you</h3><p>Living with diabetes and want order, reminders, and a hand? Come
-        be one of the first.</p></div>
-      <div class="card"><h3>For your family</h3><p>Caring for someone diabetic — a parent, a spouse? We'll
-        help you help them.</p></div>
+  <!-- ============ LIFEBOARD ============ -->
+  <section id="lifeboard" style="max-width:1140px;margin:0 auto;padding:96px 24px;">
+    <div style="text-align:center;max-width:680px;margin:0 auto 48px;">
+      <div style="font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#D99A2B;margin-bottom:14px;">The LifeBoard</div>
+      <h2 style="font-weight:800;font-size:clamp(30px,4.4vw,46px);letter-spacing:-1px;line-height:1.1;margin:0 0 16px;">The screen you wake up <span style="color:#D99A2B;">to</span></h2>
+      <p style="font-size:18px;line-height:1.65;color:#6b5e4f;margin:0;">Open it in the morning and your whole diabetic day is right there — no digging through ten apps, an inbox, and a drawer. Everything in one calm place.</p>
     </div>
-    <form id="contactForm" class="contact-form">
-      <div class="row">
-        <label>Your name<input name="name" autocomplete="name" required></label>
-        <label>Email<input name="email" type="email" autocomplete="email" required></label>
+
+    <div style="background:#fff;border:1px solid #ece3d2;border-radius:24px;box-shadow:0 2px 6px rgba(43,33,24,.04),0 40px 80px -50px rgba(43,33,24,.5);padding:28px;">
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:4px 8px 22px;border-bottom:1px solid #f0e8d8;margin-bottom:22px;">
+        <div style="font-weight:800;font-size:18px;letter-spacing:-0.3px;">Good morning.</div>
+        <div style="font-size:13px;color:#9b8d7b;">Tuesday · everything’s on your box</div>
       </div>
-      <label>This is for
-        <select name="topic"><option>Myself</option><option>A family member I care for</option></select></label>
-      <label>Tell us a little about what you need
-        <textarea name="message" rows="4" required placeholder="A few words is plenty — we'll take it from there."></textarea></label>
-      <input type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true" class="hp">
-      <button type="submit">Send it our way →</button>
-      <p class="formnote" id="contactResult" role="status"></p>
-    </form>
-    <p class="micro center">Or email <a href="mailto:build@localdiabetic.com">build@localdiabetic.com</a> — we read every message, and we answer like neighbors.</p>
-    <p class="micro center disc">LocalDiabetic organizes, reminds, and explains — it is <b>not medical advice</b> and does not replace your doctor. For emergencies, call 911.</p>
-  </div>
-</section>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(232px,1fr));gap:14px;">
 
-<section id="news" class="section news">
-  <div class="wrap">
-    <h2><span class="bee" aria-hidden="true">🐝</span> The DailyLocal</h2>
-    <p class="sub">LocalDiabetic news, the models, new features, and little wins — straight to your inbox.
-       The good stuff, no noise. Unsubscribe anytime.</p>
-    <form id="newsForm" class="news-form">
-      <input name="email" type="email" autocomplete="email" placeholder="you@email.com" aria-label="Email address" required>
-      <input type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true" class="hp">
-      <button type="submit">Subscribe →</button>
-    </form>
-    <p class="formnote" id="newsResult" role="status"></p>
-    <p class="micro center">Free · updates, not noise · your email stays private.</p>
-  </div>
-</section>
+        <div style="background:#FBF7EF;border:1px solid #ece3d2;border-radius:16px;padding:18px;">
+          <div style="display:flex;align-items:center;gap:9px;margin-bottom:12px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6b5e4f" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5.5" width="16" height="14.5" rx="2.5"></rect><line x1="4" y1="9.8" x2="20" y2="9.8"></line><line x1="8.5" y1="3" x2="8.5" y2="6.5"></line><line x1="15.5" y1="3" x2="15.5" y2="6.5"></line></svg><span style="font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#9b8d7b;">Next appointment</span></div>
+          <div style="font-weight:700;font-size:16px;">Podiatry · Dr. Greene</div>
+          <div style="display:flex;align-items:center;gap:7px;margin-top:8px;"><span style="width:7px;height:7px;border-radius:50%;background:#3D9BE9;"></span><span style="font-size:13px;color:#6b5e4f;">In 3 days</span></div>
+        </div>
 
-<footer class="footer">
-  <div class="wrap">
-    <img src="assets/wordmark.svg" alt="LocalDiabetic" height="38">
-    <p>LocalDiabetic is the home · DailyLifeOS is the system · OpenDiabetic is the hive · DiabeticLedger is the proof.</p>
-    <p><a href="/study"><b>LocalStudy</b> — every box &amp; model, evaluated in the open · is it defendable?</a></p>
-    <p class="links">
-      <a href="https://opendiabetic.com">OpenDiabetic</a> ·
-      <a href="https://dailylifeos.org">DailyLifeOS</a> ·
-      <a href="https://diabeticdocs.com">DiabeticDocs</a> ·
-      <a href="https://diabeticnode.com">DiabeticNode</a> ·
-      <a href="https://diabeticdatasets.com">DiabeticDatasets</a> ·
-      <a href="https://diabeticmodels.com">DiabeticModels</a> ·
-      <a href="https://diabetictruth.org">DiabeticTruth</a> ·
-      <a href="https://diabeticledger.com">DiabeticLedger</a> ·
-      <a href="https://diabeticdonation.com">DiabeticDonation</a>
-    </p>
-    <p class="contact">Email <a href="mailto:build@localdiabetic.com">build@localdiabetic.com</a> ·
-      HQ · Jupiter, Florida · <a href="tel:+15615327120">561.532.7120</a> ·
-      <a href="https://x.com/opendiabetics" rel="me">@opendiabetics</a> · <a href="https://huggingface.co/SwarmandBee" rel="me">🤗 Hugging Face</a></p>
-    <p class="motto">Give people what they need, not what you have. Life deserves a little peace of mind.</p>
-    <p class="legal">Owned &amp; operated by <b>Swarm and Bee LLC</b> · DBA Swarm &amp; Bee AI · Florida<br>
-      UEI L9EXVH9L9VU6 · CAGE 20YM3 · D-U-N-S 138652395 · Registered &amp; active in SAM.gov<br>
-      &copy; 2026 DefendableOS · Proof of Execution.</p>
+        <div style="background:#FBF7EF;border:1px solid #ece3d2;border-radius:16px;padding:18px;">
+          <div style="display:flex;align-items:center;gap:9px;margin-bottom:12px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6b5e4f" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><g transform="rotate(-45 12 12)"><rect x="2.5" y="8.5" width="19" height="7" rx="3.5"></rect><line x1="12" y1="8.5" x2="12" y2="15.5"></line></g></svg><span style="font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#9b8d7b;">Today’s meds</span></div>
+          <div style="font-weight:700;font-size:16px;">Insulin · Metformin</div>
+          <div style="display:flex;align-items:center;gap:7px;margin-top:8px;"><span style="width:7px;height:7px;border-radius:50%;background:#2FB67A;"></span><span style="font-size:13px;color:#6b5e4f;">Nudged on time</span></div>
+        </div>
+
+        <div style="background:#FBF7EF;border:1px solid #ece3d2;border-radius:16px;padding:18px;">
+          <div style="display:flex;align-items:center;gap:9px;margin-bottom:12px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6b5e4f" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"></circle><path d="M12 4 a8 8 0 0 1 0 16"></path></svg><span style="font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#9b8d7b;">Food today</span></div>
+          <div style="font-weight:700;font-size:16px;">3 meals planned</div>
+          <div style="font-size:13px;color:#6b5e4f;margin-top:8px;">95g carbs</div>
+        </div>
+
+        <div style="background:#FBF7EF;border:1px solid #ece3d2;border-radius:16px;padding:18px;">
+          <div style="display:flex;align-items:center;gap:9px;margin-bottom:12px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6b5e4f" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13 h3 l2 -5 3 11 2.5 -7 1.5 3 h5"></path></svg><span style="font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#9b8d7b;">Move today</span></div>
+          <div style="font-weight:700;font-size:16px;">Walk 30 / 30 min</div>
+          <div style="display:flex;align-items:center;gap:7px;margin-top:8px;"><span style="width:7px;height:7px;border-radius:50%;background:#2FB67A;"></span><span style="font-size:13px;color:#6b5e4f;">4,200 steps</span></div>
+        </div>
+
+        <div style="background:#FBF7EF;border:1px solid #ece3d2;border-radius:16px;padding:18px;">
+          <div style="display:flex;align-items:center;gap:9px;margin-bottom:12px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6b5e4f" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16 L10 10 L13.5 13.5 L20 6"></path><path d="M20 11 V6 H15"></path></svg><span style="font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#9b8d7b;">A1C trend</span></div>
+          <div style="font-weight:800;font-size:24px;letter-spacing:-0.5px;">6.9%</div>
+          <div style="display:flex;align-items:center;gap:7px;margin-top:6px;"><span style="width:7px;height:7px;border-radius:50%;background:#2FB67A;"></span><span style="font-size:13px;color:#6b5e4f;">Down from 7.4</span></div>
+        </div>
+
+        <div style="background:#FBF7EF;border:1px solid #ece3d2;border-radius:16px;padding:18px;">
+          <div style="display:flex;align-items:center;gap:9px;margin-bottom:12px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6b5e4f" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4 a5.6 5.6 0 0 1 5.6 5.6 c0 4 1.5 5.4 2 6.4 H4.4 c0.5 -1 2 -2.4 2 -6.4 A5.6 5.6 0 0 1 12 4 z"></path><path d="M10 19 a2 2 0 0 0 4 0"></path></svg><span style="font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#9b8d7b;">Notifications</span></div>
+          <div style="font-weight:700;font-size:16px;">Foot check tonight 👣</div>
+          <div style="font-size:13px;color:#6b5e4f;margin-top:8px;">Phone + watch</div>
+        </div>
+
+        <div style="background:#FBF7EF;border:1px solid #ece3d2;border-radius:16px;padding:18px;">
+          <div style="display:flex;align-items:center;gap:9px;margin-bottom:12px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6b5e4f" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="3" width="9" height="16" rx="2"></rect><rect x="16.5" y="8" width="4.5" height="7" rx="1.5"></rect></svg><span style="font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#9b8d7b;">Synced devices</span></div>
+          <div style="font-weight:700;font-size:16px;">iPhone · Apple Watch</div>
+          <div style="font-size:13px;color:#6b5e4f;margin-top:8px;">Quietly in sync</div>
+        </div>
+
+        <div style="background:#FBF7EF;border:1px solid #ece3d2;border-radius:16px;padding:18px;">
+          <div style="display:flex;align-items:center;gap:9px;margin-bottom:12px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6b5e4f" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11 L12 4.2 L20 11"></path><path d="M6 10 V20 H18 V10"></path></svg><span style="font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#9b8d7b;">Supplies</span></div>
+          <div style="font-weight:700;font-size:16px;">Test strips low</div>
+          <div style="display:flex;align-items:center;gap:7px;margin-top:8px;"><span style="width:7px;height:7px;border-radius:50%;background:#E2524F;"></span><span style="font-size:13px;color:#6b5e4f;">Reorder soon</span></div>
+        </div>
+
+        <div style="background:#2B2118;border:1px solid #2B2118;border-radius:16px;padding:18px;">
+          <div style="display:flex;align-items:center;gap:9px;margin-bottom:12px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F2B441" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 l7 2.8 v5.2 c0 4.8 -3.3 8.2 -7 9.2 c-3.7 -1 -7 -4.4 -7 -9.2 V5.8 z"></path><path d="M9.5 12 l1.8 1.8 L15 9.5"></path></svg><span style="font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#e7c98a;">Emergency</span></div>
+          <div style="font-weight:700;font-size:16px;color:#FBF7EF;">One tap → your people</div>
+          <div style="font-size:13px;color:#b8a98f;margin-top:8px;">Always one button away</div>
+        </div>
+
+      </div>
+    </div>
+    <p style="text-align:center;font-size:14px;color:#9b8d7b;margin:22px 0 0;">An example — every card is built from <span style="color:#6b5e4f;">your own records</span>, on your box. No guessing, just the facts.</p>
+  </section>
+
+  <!-- ============ WHAT IT DOES ============ -->
+  <section style="background:#F3ECDD;border-top:1px solid #ece3d2;border-bottom:1px solid #ece3d2;">
+    <div style="max-width:1140px;margin:0 auto;padding:96px 24px;">
+      <div style="text-align:center;max-width:680px;margin:0 auto 52px;">
+        <div style="font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#D99A2B;margin-bottom:14px;">What it does for you</div>
+        <h2 style="font-weight:800;font-size:clamp(30px,4.4vw,46px);letter-spacing:-1px;line-height:1.1;margin:0;">Simple, warm, built for <span style="color:#D99A2B;">real life</span></h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:18px;">
+
+        <div style="background:#FBF7EF;border:1px solid #ece3d2;border-radius:18px;padding:30px;">
+          <div style="width:48px;height:48px;border-radius:13px;background:#FBF0D8;border:1px solid #F0DCA8;display:flex;align-items:center;justify-content:center;margin-bottom:18px;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D99A2B" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"></circle><path d="M12 9 v4 l2.5 1.5"></path><path d="M9 3 h6"></path></svg></div>
+          <h3 style="font-weight:800;font-size:21px;letter-spacing:-0.4px;margin:0 0 10px;">Reminders that find you</h3>
+          <p style="font-size:16px;line-height:1.6;color:#6b5e4f;margin:0;">Meds, foot checks, appointments, supplies — gentle nudges to your phone and watch, 24/7, so nothing important slips.</p>
+        </div>
+
+        <div style="background:#FBF7EF;border:1px solid #ece3d2;border-radius:18px;padding:30px;">
+          <div style="width:48px;height:48px;border-radius:13px;background:#FBF0D8;border:1px solid #F0DCA8;display:flex;align-items:center;justify-content:center;margin-bottom:18px;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D99A2B" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 l7 2.8 v5.2 c0 4.8 -3.3 8.2 -7 9.2 c-3.7 -1 -7 -4.4 -7 -9.2 V5.8 z"></path><circle cx="12" cy="11" r="1.8"></circle><path d="M12 12.6 v2.6"></path></svg></div>
+          <h3 style="font-weight:800;font-size:21px;letter-spacing:-0.4px;margin:0 0 10px;">Your records, safe at home</h3>
+          <p style="font-size:16px;line-height:1.6;color:#6b5e4f;margin:0;">One private place for everything — on your own box, in your own house. We never see it, never sell it, never share it.</p>
+        </div>
+
+        <div style="background:#FBF7EF;border:1px solid #ece3d2;border-radius:18px;padding:30px;">
+          <div style="width:48px;height:48px;border-radius:13px;background:#FBF0D8;border:1px solid #F0DCA8;display:flex;align-items:center;justify-content:center;margin-bottom:18px;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D99A2B" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 7.5 c2.2 0 3.4 2.3 3.4 5 c0 2.3 -1 3.6 -1 5.8 c0 2.2 -1.6 3.7 -3.9 3.7 c-2.5 0 -4.2 -1.7 -4.2 -4.2 c0 -2.9 1.5 -3.6 1.5 -6.5 c0 -2.6 1.8 -3.8 4.2 -3.8 z"></path><circle cx="6.6" cy="9.5" r="1.3"></circle><circle cx="6.4" cy="13.4" r="1.1"></circle></svg></div>
+          <h3 style="font-weight:800;font-size:21px;letter-spacing:-0.4px;margin:0 0 10px;">The daily foot check</h3>
+          <p style="font-size:16px;line-height:1.6;color:#6b5e4f;margin:0;">The two-minute habit that saves toes — a guided check, a photo timeline, and a nudge every day. Feet come first.</p>
+        </div>
+
+        <div style="background:#FBF7EF;border:1px solid #ece3d2;border-radius:18px;padding:30px;">
+          <div style="width:48px;height:48px;border-radius:13px;background:#FBF0D8;border:1px solid #F0DCA8;display:flex;align-items:center;justify-content:center;margin-bottom:18px;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D99A2B" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="9" r="2.6"></circle><circle cx="16" cy="10" r="2.2"></circle><path d="M3.5 19 c0 -2.8 2.2 -4.6 5 -4.6 c1.6 0 3 .6 3.9 1.6"></path><path d="M13.5 19 c0 -2.4 1.8 -4 4.4 -4 c2.2 0 3.6 1.3 3.6 3"></path></svg></div>
+          <h3 style="font-weight:800;font-size:21px;letter-spacing:-0.4px;margin:0 0 10px;">A hand for your family</h3>
+          <p style="font-size:16px;line-height:1.6;color:#6b5e4f;margin:0;">If you go quiet when something matters, someone who loves you gets a gentle check-in. Nobody falls through alone.</p>
+        </div>
+
+        <div style="background:#FBF7EF;border:1px solid #ece3d2;border-radius:18px;padding:30px;">
+          <div style="width:48px;height:48px;border-radius:13px;background:#FBF0D8;border:1px solid #F0DCA8;display:flex;align-items:center;justify-content:center;margin-bottom:18px;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D99A2B" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5 h16 v11 h-9 l-5 4 v-4 H4 z"></path><path d="M8.5 9.5 h7"></path><path d="M8.5 12.5 h4.5"></path></svg></div>
+          <h3 style="font-weight:800;font-size:21px;letter-spacing:-0.4px;margin:0 0 10px;">A helper that gets diabetes</h3>
+          <p style="font-size:16px;line-height:1.6;color:#6b5e4f;margin:0;">Ask it to explain a lab result, plan a diabetic-friendly meal, or prep your questions for the doctor — privately, on your box. It never plays doctor.</p>
+        </div>
+
+        <div style="background:#FBF7EF;border:1px solid #ece3d2;border-radius:18px;padding:30px;">
+          <div style="width:48px;height:48px;border-radius:13px;background:#FBF0D8;border:1px solid #F0DCA8;display:flex;align-items:center;justify-content:center;margin-bottom:18px;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D99A2B" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20 C5 15.5 3.5 11 3.5 8.5 A4 4 0 0 1 12 6.8 A4 4 0 0 1 20.5 8.5 C20.5 11 19 15.5 12 20 z"></path></svg></div>
+          <h3 style="font-weight:800;font-size:21px;letter-spacing:-0.4px;margin:0 0 10px;">Care when life gets hard</h3>
+          <p style="font-size:16px;line-height:1.6;color:#6b5e4f;margin:0;">As we open our doors: a ride to the appointment, diabetic shoes, supplies when money’s tight — real help, free, no strings.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BRAIN ============ -->
+  <section id="brain" style="max-width:1140px;margin:0 auto;padding:96px 24px;">
+    <div style="text-align:center;max-width:760px;margin:0 auto 52px;">
+      <div style="font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#D99A2B;margin-bottom:14px;">The brain</div>
+      <h2 style="font-weight:800;font-size:clamp(30px,4.4vw,46px);letter-spacing:-1px;line-height:1.12;margin:0 0 16px;">Not a generic chatbot — a brain that actually <span style="color:#D99A2B;">knows diabetes</span></h2>
+      <p style="font-size:18px;line-height:1.65;color:#6b5e4f;margin:0;">The helper runs on <strong style="color:#2B2118;font-weight:700;">DiabeticDaily</strong> — models we cooked ourselves on cited diabetic and medical data, and proved they understand the domain better than the model they started from. Open for anyone to check.</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;max-width:920px;margin:0 auto;">
+      <div style="background:#fff;border:1px solid #ece3d2;border-radius:18px;padding:30px;text-align:center;box-shadow:0 18px 40px -34px rgba(43,33,24,.4);">
+        <div style="font-size:13px;font-weight:700;color:#6b5e4f;font-family:ui-monospace,Menlo,monospace;margin-bottom:14px;">DiabeticDaily-27B</div>
+        <div style="font-weight:800;font-size:46px;letter-spacing:-1.5px;color:#D99A2B;line-height:1;">+57%</div>
+        <div style="font-size:14px;color:#6b5e4f;margin-top:12px;line-height:1.5;">better than its base, on held-out medical text</div>
+      </div>
+      <div style="background:#fff;border:1px solid #ece3d2;border-radius:18px;padding:30px;text-align:center;box-shadow:0 18px 40px -34px rgba(43,33,24,.4);">
+        <div style="font-size:13px;font-weight:700;color:#6b5e4f;font-family:ui-monospace,Menlo,monospace;margin-bottom:14px;">DiabeticDaily-9B</div>
+        <div style="font-weight:800;font-size:46px;letter-spacing:-1.5px;color:#D99A2B;line-height:1;">+40.7%</div>
+        <div style="font-size:14px;color:#6b5e4f;margin-top:12px;line-height:1.5;">better — the home-box tier</div>
+      </div>
+      <div style="background:#fff;border:1px solid #ece3d2;border-radius:18px;padding:30px;text-align:center;box-shadow:0 18px 40px -34px rgba(43,33,24,.4);">
+        <div style="font-size:13px;font-weight:700;color:#6b5e4f;font-family:ui-monospace,Menlo,monospace;margin-bottom:14px;">DiabeticDaily-4B</div>
+        <div style="font-weight:800;font-size:46px;letter-spacing:-1.5px;color:#D99A2B;line-height:1;">+40.4%</div>
+        <div style="font-size:14px;color:#6b5e4f;margin-top:12px;line-height:1.5;">better — runs on a tiny box, on-box</div>
+      </div>
+    </div>
+    <p style="text-align:center;font-size:15px;color:#9b8d7b;margin:30px auto 0;max-width:60ch;">Proven, not promised — the receipts are public. Cooked once on our own compute, then shrunk small enough to run on the box in your house.</p>
+    <div style="text-align:center;margin-top:24px;"><a href="https://huggingface.co/SwarmandBee" target="_blank" rel="noopener" style="text-decoration:none;color:#D99A2B;font-weight:700;font-size:16px;border-bottom:2px solid #F2B441;padding-bottom:2px;">See the models on Hugging Face →</a></div>
+  </section>
+
+  <!-- ============ DARK BOX / PRIVACY ============ -->
+  <section style="position:relative;overflow:hidden;background:#0B0F14;">
+    <div style="position:absolute;top:50%;left:50%;width:1200px;height:1000px;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(242,180,65,.18) 0%,rgba(242,180,65,.05) 40%,transparent 64%);animation:ld-pulse 7s ease-in-out infinite;pointer-events:none;"></div>
+    <div style="position:relative;max-width:1000px;margin:0 auto;padding:104px 24px;text-align:center;">
+      <div style="font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#e7c98a;margin-bottom:18px;">It lives at home</div>
+      <h2 style="font-weight:800;font-size:clamp(32px,5vw,54px);letter-spacing:-1.4px;line-height:1.08;color:#E8EEF5;margin:0 0 20px;max-width:18ch;margin-left:auto;margin-right:auto;">A little box in your house. Your records never leave <span style="color:#F2B441;">it</span>.</h2>
+      <p style="font-size:18px;line-height:1.65;color:#9aa7b3;max-width:62ch;margin:0 auto 48px;">A small computer you own — a mini-PC, a home server, a board on the nightstand. The brain runs right there, on the box. No cloud. No internet needed. No monthly bill.</p>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;max-width:760px;margin:0 auto 40px;text-align:left;">
+        <div style="background:rgba(255,255,255,.03);border:1px solid #1F2A36;border-radius:18px;padding:28px;">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F2B441" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11 L12 4.2 L20 11"></path><path d="M6 10 V20 H18 V10"></path><circle cx="12" cy="15.4" r="2.1"></circle></svg><span style="font-weight:800;font-size:17px;color:#E8EEF5;">Your box</span></div>
+          <p style="font-size:15px;line-height:1.6;color:#9aa7b3;margin:0;">Your records, photos, and reminders — all on hardware you own. The brain runs on it, answers you on it, and nothing private ever leaves it.</p>
+        </div>
+        <div style="background:rgba(255,255,255,.03);border:1px solid #1F2A36;border-radius:18px;padding:28px;">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;"><span style="font-size:20px;">🐝</span><span style="font-weight:800;font-size:17px;color:#E8EEF5;">The hive</span></div>
+          <p style="font-size:15px;line-height:1.6;color:#9aa7b3;margin:0;">OpenDiabetic cooks the models and sends them down to your box. It only ever receives a plain “done” receipt — never anything about you.</p>
+        </div>
+      </div>
+
+      <div style="display:inline-flex;align-items:center;gap:12px;background:rgba(242,180,65,.10);border:1px solid rgba(242,180,65,.3);border-radius:14px;padding:16px 24px;">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F2B441" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 l7 2.8 v5.2 c0 4.8 -3.3 8.2 -7 9.2 c-3.7 -1 -7 -4.4 -7 -9.2 V5.8 z"></path><path d="M9.5 12 l1.8 1.8 L15 9.5"></path></svg>
+        <span style="font-size:16px;font-weight:600;color:#E8EEF5;">The one promise we build in code: <span style="color:#F2B441;font-weight:800;">your data never leaves your box.</span></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROMISE ============ -->
+  <section id="promise" style="max-width:1140px;margin:0 auto;padding:96px 24px;">
+    <div style="text-align:center;max-width:640px;margin:0 auto 52px;">
+      <div style="font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#D99A2B;margin-bottom:14px;">Our promise to you</div>
+      <h2 style="font-weight:800;font-size:clamp(30px,4.4vw,46px);letter-spacing:-1px;line-height:1.1;margin:0;">Three things, every day</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;">
+      <div style="background:#fff;border:1px solid #ece3d2;border-radius:18px;padding:34px;">
+        <h3 style="font-weight:800;font-size:24px;letter-spacing:-0.4px;margin:0 0 12px;color:#D99A2B;">Free</h3>
+        <p style="font-size:16px;line-height:1.65;color:#6b5e4f;margin:0;">It costs you nothing. The compute pays for it, so you never have to. No charge, no strings, no catch.</p>
+      </div>
+      <div style="background:#fff;border:1px solid #ece3d2;border-radius:18px;padding:34px;">
+        <h3 style="font-weight:800;font-size:24px;letter-spacing:-0.4px;margin:0 0 12px;color:#D99A2B;">Private</h3>
+        <p style="font-size:16px;line-height:1.65;color:#6b5e4f;margin:0;">Your records never leave your home. Not to us, not to the cloud, not to anyone. You hold the keys.</p>
+      </div>
+      <div style="background:#fff;border:1px solid #ece3d2;border-radius:18px;padding:34px;">
+        <h3 style="font-weight:800;font-size:24px;letter-spacing:-0.4px;margin:0 0 12px;color:#D99A2B;">A hand on your shoulder</h3>
+        <p style="font-size:16px;line-height:1.65;color:#6b5e4f;margin:0;">Reminders when you need them, family when it matters, real help when life gets hard. You’re not alone.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOUNDER ============ -->
+  <section id="about" style="background:#F3ECDD;border-top:1px solid #ece3d2;border-bottom:1px solid #ece3d2;">
+    <div style="max-width:860px;margin:0 auto;padding:96px 24px;text-align:center;">
+      <div style="font-size:84px;line-height:.6;color:#F2B441;font-weight:800;height:48px;">“</div>
+      <blockquote style="font-weight:700;font-size:clamp(24px,3.4vw,34px);letter-spacing:-0.6px;line-height:1.35;color:#2B2118;margin:0 0 28px;text-wrap:pretty;">I’m a Type 1 diabetic, and I call it a gift. It lives with me 24/7 — and I’ve <span style="color:#D99A2B;">won big</span> at this life. So I built the thing I needed, and the thing you need — to win too. Give people what they need, not what you have. And it costs you nothing.</blockquote>
+      <div style="font-size:15px;color:#6b5e4f;">— Donovan · Type 1 Diabetic · building LocalDiabetic one day at a time</div>
+    </div>
+  </section>
+
+  <!-- ============ JOIN ============ -->
+  <section id="start" style="max-width:1040px;margin:0 auto;padding:96px 24px;">
+    <div style="text-align:center;max-width:660px;margin:0 auto 44px;">
+      <div style="font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#D99A2B;margin-bottom:14px;">We’re opening our doors</div>
+      <h2 style="font-weight:800;font-size:clamp(30px,4.4vw,46px);letter-spacing:-1px;line-height:1.1;margin:0 0 16px;">Come be one of the <span style="color:#D99A2B;">first members</span></h2>
+      <p style="font-size:18px;line-height:1.65;color:#6b5e4f;margin:0;">Tell us a little about what you need — whether it’s for you or for someone you love — and we’ll reach out personally.</p>
+    </div>
+
+    <div style="background:#fff;border:1px solid #ece3d2;border-radius:22px;box-shadow:0 2px 6px rgba(43,33,24,.04),0 40px 80px -50px rgba(43,33,24,.5);padding:40px;max-width:640px;margin:0 auto;">
+      
+        <form id="ld-join" novalidate>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px;">
+            <div><label style="display:block;font-size:13px;font-weight:600;color:#6b5e4f;margin-bottom:7px;">Your name</label><input type="text" name="name" required placeholder="Jane" style="width:100%;font-family:inherit;font-size:16px;color:#2B2118;background:#FBF7EF;border:1px solid #ece3d2;border-radius:11px;padding:13px 14px;"></div>
+            <div><label style="display:block;font-size:13px;font-weight:600;color:#6b5e4f;margin-bottom:7px;">Email</label><input type="email" name="email" required placeholder="you@email.com" style="width:100%;font-family:inherit;font-size:16px;color:#2B2118;background:#FBF7EF;border:1px solid #ece3d2;border-radius:11px;padding:13px 14px;"></div>
+          </div>
+          <div style="margin-bottom:14px;">
+            <label style="display:block;font-size:13px;font-weight:600;color:#6b5e4f;margin-bottom:7px;">This is for</label>
+            <div style="display:flex;gap:10px;">
+              <button type="button" data-aud data-sel="1" style="flex:1;text-align:center;padding:12px;border-radius:11px;font-size:15px;font-weight:600;cursor:pointer;font-family:inherit;background:#FBF0D8;border:1.5px solid #D99A2B;color:#2B2118;">Myself</button>
+              <button type="button" data-aud style="flex:1;text-align:center;padding:12px;border-radius:11px;font-size:15px;font-weight:600;cursor:pointer;font-family:inherit;background:#FBF7EF;border:1px solid #ece3d2;color:#6b5e4f;">A family member I care for</button>
+            </div>
+          </div>
+          <div style="margin-bottom:20px;">
+            <label style="display:block;font-size:13px;font-weight:600;color:#6b5e4f;margin-bottom:7px;">Tell us a little about what you need</label>
+            <textarea rows="3" name="message" placeholder="A few words is plenty." style="width:100%;font-family:inherit;font-size:16px;color:#2B2118;background:#FBF7EF;border:1px solid #ece3d2;border-radius:11px;padding:13px 14px;resize:vertical;"></textarea>
+          </div>
+          <div id="ld-join-res" style="text-align:center;font-size:15px;margin:0 0 12px;"></div><button type="submit" style="width:100%;background:#F2B441;color:#1a1205;font-weight:800;font-size:17px;font-family:inherit;border:none;border-radius:13px;padding:16px;cursor:pointer;box-shadow:0 8px 20px -8px rgba(217,154,43,.8);" data-h="background:#e9aa31;">Send it our way →</button>
+          <p style="font-size:13px;color:#9b8d7b;text-align:center;margin:16px 0 0;">Or email <a href="mailto:build@localdiabetic.com" style="color:#D99A2B;font-weight:600;text-decoration:none;">build@localdiabetic.com</a> — we read every message.</p>
+        </form>
+      
+    </div>
+    <p style="text-align:center;font-size:13.5px;color:#9b8d7b;max-width:62ch;margin:28px auto 0;line-height:1.6;">LocalDiabetic organizes, reminds, and explains — it is <strong style="color:#6b5e4f;font-weight:700;">not medical advice</strong> and does not replace your doctor. For emergencies, call 911.</p>
+  </section>
+
+  <!-- ============ DAILYLOCAL SUBSCRIBE ============ -->
+  <section id="news" style="background:#FBF0D8;border-top:1px solid #F0DCA8;border-bottom:1px solid #F0DCA8;">
+    <div style="max-width:720px;margin:0 auto;padding:64px 24px;text-align:center;">
+      <div style="font-weight:800;font-size:24px;letter-spacing:-0.4px;color:#D99A2B;margin-bottom:10px;">🐝 The DailyLocal</div>
+      <p style="font-size:17px;line-height:1.6;color:#2B2118;margin:0 0 26px;">LocalDiabetic news, the models, new features, and little wins — straight to your inbox. The good stuff, no noise.</p>
+      <form data-news style="display:flex;gap:10px;max-width:460px;margin:0 auto;flex-wrap:wrap;justify-content:center;">
+        <input type="email" name="email" required placeholder="you@email.com" style="flex:1;min-width:220px;font-family:inherit;font-size:16px;color:#2B2118;background:#FBF7EF;border:1px solid #E6C98A;border-radius:12px;padding:14px 16px;">
+        <button type="submit" style="background:#2B2118;color:#FBF7EF;font-weight:700;font-size:16px;font-family:inherit;border:none;border-radius:12px;padding:14px 26px;cursor:pointer;" data-h="background:#1a130c;">Subscribe</button>
+      </form>
+      <p style="font-size:13px;color:#9a7d3f;margin:18px 0 0;">Free · updates, not noise · your email stays private.</p>
+    </div>
+  </section>
+
+  <footer style="background:#0B0F14;color:#9aa7b3;font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;">
+  <div style="max-width:1140px;margin:0 auto;padding:72px 24px 40px;">
+    <div style="display:flex;align-items:center;gap:11px;margin-bottom:20px;">
+      <svg width="28" height="31" viewBox="0 0 120 132" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block;overflow:visible">
+        <path d="M54 20 C48 6 41 3 34 5" stroke="#0B0F14" stroke-width="4.2" stroke-linecap="round"></path><path d="M66 20 C72 6 79 3 86 5" stroke="#0B0F14" stroke-width="4.2" stroke-linecap="round"></path><circle cx="33" cy="5" r="4.4" fill="#F2B441" stroke="#0B0F14" stroke-width="3"></circle><circle cx="87" cy="5" r="4.4" fill="#F2B441" stroke="#0B0F14" stroke-width="3"></circle><ellipse cx="36" cy="54" rx="19" ry="26" fill="#3a3526" stroke="#F2B441" stroke-width="3" transform="rotate(-24 36 54)"></ellipse><ellipse cx="84" cy="54" rx="19" ry="26" fill="#3a3526" stroke="#F2B441" stroke-width="3" transform="rotate(24 84 54)"></ellipse><rect x="40" y="44" width="40" height="72" rx="20" fill="#F2B441" stroke="#0B0F14" stroke-width="4.2"></rect><g clip-path="url(#fbk)"><rect x="36" y="66" width="48" height="12" fill="#0B0F14"></rect><rect x="36" y="90" width="48" height="12" fill="#0B0F14"></rect></g><clipPath id="fbk"><rect x="40" y="44" width="40" height="72" rx="20"></rect></clipPath><circle cx="60" cy="31" r="17" fill="#E8EEF5"></circle><circle cx="53" cy="29" r="3.4" fill="#0B0F14"></circle><circle cx="67" cy="29" r="3.4" fill="#0B0F14"></circle>
+      </svg>
+      <span style="font-size:19px;letter-spacing:-0.3px;"><span style="font-weight:600;color:#E8EEF5;">Local</span><span style="font-weight:800;color:#F2B441;">Diabetic</span></span>
+    </div>
+    <p style="font-size:15px;color:#7d8893;max-width:60ch;margin:0 0 28px;line-height:1.6;">LocalDiabetic is the home · DailyLifeOS is the system · OpenDiabetic is the hive · DiabeticLedger is the proof.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:10px 22px;font-size:14px;margin-bottom:32px;">
+      <a href="https://opendiabetic.com/" target="_blank" rel="noopener" style="color:#9aa7b3;text-decoration:none;" data-h="color:#F2B441;">OpenDiabetic</a>
+      <a href="https://dailylifeos.org/" target="_blank" rel="noopener" style="color:#9aa7b3;text-decoration:none;" data-h="color:#F2B441;">DailyLifeOS</a>
+      <a href="https://diabeticdocs.com/" target="_blank" rel="noopener" style="color:#9aa7b3;text-decoration:none;" data-h="color:#F2B441;">DiabeticDocs</a>
+      <a href="https://diabeticnode.com/" target="_blank" rel="noopener" style="color:#9aa7b3;text-decoration:none;" data-h="color:#F2B441;">DiabeticNode</a>
+      <a href="https://diabeticdatasets.com/" target="_blank" rel="noopener" style="color:#9aa7b3;text-decoration:none;" data-h="color:#F2B441;">DiabeticDatasets</a>
+      <a href="https://diabeticmodels.com/" target="_blank" rel="noopener" style="color:#9aa7b3;text-decoration:none;" data-h="color:#F2B441;">DiabeticModels</a>
+      <a href="https://diabeticledger.com/" target="_blank" rel="noopener" style="color:#9aa7b3;text-decoration:none;" data-h="color:#F2B441;">DiabeticLedger</a>
+      <a href="https://diabeticdonation.com/" target="_blank" rel="noopener" style="color:#9aa7b3;text-decoration:none;" data-h="color:#F2B441;">DiabeticDonation</a>
+    </div>
+    <div style="border-top:1px solid #1F2A36;padding-top:26px;">
+      <div style="font-size:13px;color:#5d6b78;line-height:1.7;">
+        <a href="mailto:build@localdiabetic.com" style="color:#9aa7b3;text-decoration:none;" data-h="color:#F2B441;">build@localdiabetic.com</a> · HQ · Jupiter, Florida · 561.532.7120 · <a href="https://x.com/opendiabetics" target="_blank" rel="noopener" style="color:#9aa7b3;text-decoration:none;" data-h="color:#F2B441;">@opendiabetics</a><br>
+        Owned &amp; operated by Swarm and Bee LLC · DBA Swarm &amp; Bee AI · Florida<br>
+        D-U-N-S 138652395 · © 2026 · “Give people what they need, not what you have.”
+      </div>
+    </div>
   </div>
 </footer>
 
+</div>
 <script>
-const f = document.getElementById("contactForm");
-f && f.addEventListener("submit", async e => {
-  e.preventDefault();
-  const r = document.getElementById("contactResult"), btn = f.querySelector("button");
-  r.className = "formnote"; r.textContent = "Sending…"; btn.disabled = true;
-  const body = { name:f.name.value, email:f.email.value, topic:f.topic.value, message:f.message.value, company:f.company.value };
-  try {
-    const res = await fetch("/api/contact", { method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify(body) });
-    const out = await res.json();
-    if (res.ok && out.ok){ r.className="formnote ok"; r.textContent="Thank you 🐝 we got it — we'll reach out personally, soon."; f.reset(); }
-    else { r.className="formnote bad"; r.textContent = out.error || "Couldn't send — please email build@localdiabetic.com."; }
-  } catch { r.className="formnote bad"; r.textContent="Couldn't reach us — please email build@localdiabetic.com."; }
-  btn.disabled = false;
-});
-
-const nf = document.getElementById("newsForm");
-nf && nf.addEventListener("submit", async e => {
-  e.preventDefault();
-  const r = document.getElementById("newsResult"), btn = nf.querySelector("button");
-  r.className = "formnote"; r.textContent = "Signing you up…"; btn.disabled = true;
-  try {
-    const res = await fetch("/api/subscribe", { method:"POST", headers:{"Content-Type":"application/json"},
-      body: JSON.stringify({ email: nf.email.value, company: nf.company.value }) });
-    const out = await res.json();
-    if (res.ok && out.ok){ r.className="formnote ok"; r.textContent="You're in 🐝 welcome to The DailyLocal."; nf.reset(); }
-    else { r.className="formnote bad"; r.textContent = out.error || "Couldn't sign you up — email build@localdiabetic.com."; }
-  } catch { r.className="formnote bad"; r.textContent="Couldn't reach us — email build@localdiabetic.com."; }
-  btn.disabled = false;
-});
+(function(){
+  var rm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // apply hover declarations
+  document.querySelectorAll('[data-h]').forEach(function(el){
+    var hov = el.getAttribute('data-h'), base = el.getAttribute('style')||'';
+    el.addEventListener('mouseenter', function(){ el.setAttribute('style', base+';'+hov); });
+    el.addEventListener('mouseleave', function(){ el.setAttribute('style', base); });
+  });
+  // card hover-lift (respect reduced motion)
+  if(!rm){
+    document.querySelectorAll('[data-lift]').forEach(function(c){
+      var base=c.getAttribute('style')||'';
+      c.style.transition='transform .28s cubic-bezier(.2,.7,.2,1), box-shadow .28s cubic-bezier(.2,.7,.2,1)';
+      c.addEventListener('mouseenter',function(){ c.style.transform='translateY(-5px)'; c.style.boxShadow='0 22px 44px -26px rgba(43,33,24,.5)'; });
+      c.addEventListener('mouseleave',function(){ c.style.transform=''; c.style.boxShadow=base.match(/box-shadow:[^;]*/)? '' : ''; c.setAttribute('style',base); c.style.transition='transform .28s cubic-bezier(.2,.7,.2,1), box-shadow .28s cubic-bezier(.2,.7,.2,1)'; });
+    });
+  }
+  // Join form -> /api/contact ; Newsletter -> /api/subscribe
+  var join = document.getElementById('ld-join');
+  if(join){
+    join.querySelectorAll('[data-aud]').forEach(function(b){
+      b.addEventListener('click', function(){
+        join.querySelectorAll('[data-aud]').forEach(function(x){ x.style.background='#FBF7EF'; x.style.border='1px solid #ece3d2'; x.removeAttribute('data-sel'); });
+        b.style.background='#FBF0D8'; b.style.border='1.5px solid #D99A2B'; b.setAttribute('data-sel','1');
+      });
+    });
+    join.addEventListener('submit', async function(e){
+      e.preventDefault();
+      var btn=join.querySelector('[type=submit]'), res=join.querySelector('#ld-join-res');
+      var sel=join.querySelector('[data-aud][data-sel]');
+      btn.disabled=true; if(res){res.textContent='Sending…';}
+      try{
+        var r=await fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({
+          name:join.name.value, email:join.email.value, message:join.message.value,
+          topic:(sel?sel.textContent.trim():'Join'), company:join.company?join.company.value:''})});
+        var o=await r.json();
+        if(r.ok&&o.ok){ if(res){res.textContent='Sent — thank you 🐝 we’ll reach out personally, soon.'; res.style.color='#2FB67A';} join.reset(); }
+        else { if(res){res.textContent=(o.error||'Couldn’t send — email build@localdiabetic.com.'); res.style.color='#E2524F';} }
+      }catch(_){ if(res){res.textContent='Couldn’t reach us — email build@localdiabetic.com.'; res.style.color='#E2524F';} }
+      btn.disabled=false;
+    });
+  }
+  document.querySelectorAll('form[data-news]').forEach(function(f){
+    f.addEventListener('submit', async function(e){
+      e.preventDefault();
+      var btn=f.querySelector('button'), label=btn.textContent;
+      btn.disabled=true; btn.textContent='…';
+      try{
+        var r=await fetch('/api/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:f.email.value})});
+        var o=await r.json();
+        if(r.ok&&o.ok){ btn.textContent='Subscribed ✓'; f.email.value=''; }
+        else { btn.textContent=label; btn.disabled=false; }
+      }catch(_){ btn.textContent=label; btn.disabled=false; }
+    });
+  });
+})();
 </script>
 </body>
 </html>
