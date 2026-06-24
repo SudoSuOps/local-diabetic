@@ -70,5 +70,16 @@
     "captionsUrl": "/assets/shorts/the-ownership-win.vtt",
     "publishedAt": "2026-06-24",
     "youtubeUrl": "https://www.youtube.com/shorts/i1Ss3XooOGA"
+  },
+  {
+    "id": "diabetes-vault",
+    "slug": "diabetes-vault",
+    "title": "The Diabetes Vault",
+    "topic": "One private place",
+    "videoUrl": "/assets/shorts/the-diabetes-vault.mp4?v=1",
+    "posterUrl": "/assets/shorts/the-diabetes-vault-poster.jpg",
+    "durationSec": 66,
+    "captionsUrl": "/assets/shorts/the-diabetes-vault.vtt",
+    "publishedAt": "2026-06-24"
   }
 ]
