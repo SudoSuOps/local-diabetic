@@ -106,5 +106,16 @@
     "captionsUrl": "/assets/shorts/daily-movement.vtt",
     "publishedAt": "2026-06-24",
     "youtubeUrl": "https://www.youtube.com/shorts/tx7ViDPkFEM"
+  },
+  {
+    "id": "win-big",
+    "slug": "win-big",
+    "title": "Win Big",
+    "topic": "The daily-wins doctrine",
+    "videoUrl": "/assets/shorts/win-big.mp4?v=1",
+    "posterUrl": "/assets/shorts/win-big-poster.jpg",
+    "durationSec": 64,
+    "captionsUrl": "/assets/shorts/win-big.vtt",
+    "publishedAt": "2026-06-24"
   }
 ]
