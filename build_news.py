@@ -103,6 +103,30 @@ def first_sentence(body):
     return (txt[:155] + "…") if len(txt) > 156 else txt
 
 
+YOUTUBE = ""  # LocalDiabetic YouTube channel URL — set when the channel exists
+
+
+def share_bar(s, slug):
+    """Forward-to-a-friend · X post · copy link (· YouTube when set) under a pinned Short."""
+    import urllib.parse as up
+    url = f"{SITE}/dailylocal/{slug}"
+    title = s.get("title", "")
+    xtext = f"{title} 🐝 A 60-second LocalDiabetic Short on A1C + time in range. Know your numbers — win big."
+    x_url = "https://x.com/intent/tweet?text=" + up.quote(xtext) + "&url=" + up.quote(url)
+    mail = ("mailto:?subject=" + up.quote(f"Watch this — {title} 🐝") +
+            "&body=" + up.quote(f"A 60-second LocalDiabetic Short — {title}.\n\nWatch it: {url}\n\nKnow your numbers. Win big. 🐝"))
+    pill = ("text-decoration:none;display:inline-flex;align-items:center;gap:8px;font:700 14px/1 'Inter',system-ui,sans-serif;"
+            "color:#2B2118;background:#fff;border:1px solid #ECE3D2;border-radius:999px;padding:11px 18px;cursor:pointer")
+    yt = (f'<a style="{pill}" href="{YOUTUBE}" target="_blank" rel="noopener" aria-label="LocalDiabetic on YouTube">▶ YouTube</a>'
+          if YOUTUBE else "")
+    return f"""<div class="ds-share" style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:0 0 40px">
+  <a style="{pill}" href="{x_url}" target="_blank" rel="noopener">𝕏 &nbsp;Post on X</a>
+  <a style="{pill}" href="{mail}">✉ &nbsp;Forward to a friend</a>
+  <button type="button" style="{pill}" onclick="navigator.clipboard.writeText('{url}').then(()=>{{this.firstChild.textContent='✓  Link copied';}})"><span>🔗 &nbsp;Copy link</span></button>
+  {yt}
+</div>"""
+
+
 def page(meta, body, shorts=None):
     title, slug = meta.get("title", "DailyLocal"), meta["slug"]
     desc = first_sentence(body)
@@ -111,7 +135,7 @@ def page(meta, body, shorts=None):
     src_html = f'<p class="source">Sources: {inline(src)}</p>' if src else ""
     # pinned DailyShort (frontmatter: pinned_short: <slug>)
     pin = (shorts or {}).get(meta.get("pinned_short", ""))
-    pin_html = short_player(pin) if pin else ""
+    pin_html = (short_player(pin) + share_bar(pin, slug)) if pin else ""
     return f"""<!doctype html>
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
