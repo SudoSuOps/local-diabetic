@@ -22,5 +22,16 @@
     "captionsUrl": "/assets/shorts/look-at-your-feet.vtt",
     "publishedAt": "2026-06-24",
     "youtubeUrl": "https://www.youtube.com/shorts/mSwfU0-SOIo"
+  },
+  {
+    "id": "summer-hydration",
+    "slug": "summer-hydration",
+    "title": "Heat Hits Us Harder",
+    "topic": "Summer & hydration",
+    "videoUrl": "/assets/shorts/heat-hits-us-harder.mp4?v=1",
+    "posterUrl": "/assets/shorts/heat-hits-us-harder-poster.jpg",
+    "durationSec": 66,
+    "captionsUrl": "/assets/shorts/heat-hits-us-harder.vtt",
+    "publishedAt": "2026-06-24"
   }
 ]
