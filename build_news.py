@@ -103,7 +103,7 @@ def first_sentence(body):
     return (txt[:155] + "…") if len(txt) > 156 else txt
 
 
-YOUTUBE = ""  # LocalDiabetic YouTube channel URL — set when the channel exists
+YOUTUBE = "https://www.youtube.com/@LocalDiabeticwin"  # LocalDiabetic channel
 
 
 def share_bar(s, slug):
