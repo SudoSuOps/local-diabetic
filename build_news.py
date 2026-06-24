@@ -151,6 +151,59 @@ def video_schema(s):
     return '<script type="application/ld+json">' + json.dumps(obj) + '</script>'
 
 
+def shorts_hub(shorts, issues):
+    """The DailyShorts channel page — a gallery of every Short at /dailylocal/shorts."""
+    # map each Short slug -> the issue it's pinned to (for the 'watch in context' link)
+    pin_issue = {m.get("pinned_short"): m["slug"] for m in issues if m.get("pinned_short")}
+    items = sorted(shorts.values(), key=lambda s: s.get("publishedAt", ""), reverse=True)
+    cards = ""
+    for s in items:
+        dur = mmss(s.get("durationSec", 65))
+        issue = pin_issue.get(s["slug"])
+        href = f"/dailylocal/{issue}" if issue else (s.get("youtubeUrl") or YOUTUBE)
+        yt = (f'<a href="{s["youtubeUrl"]}" target="_blank" rel="noopener" style="color:#D99A2B;font-weight:700;text-decoration:none;font-size:14px">▶ YouTube</a>'
+              if s.get("youtubeUrl") else "")
+        cards += f"""<a href="{href}" style="text-decoration:none;display:flex;flex-direction:column;gap:12px">
+      <div style="position:relative;aspect-ratio:9/16;border-radius:20px;overflow:hidden;background:#0B0F14;border:1px solid #ECE3D2;box-shadow:0 24px 50px -38px rgba(43,33,24,.4)">
+        <img src="{s['posterUrl']}" alt="{s.get('title','')}" loading="lazy" style="width:100%;height:100%;object-fit:cover">
+        <span style="position:absolute;left:12px;bottom:12px;background:rgba(11,15,20,.78);color:#fff;font:700 12px/1 'Inter',system-ui,sans-serif;padding:6px 10px;border-radius:999px">▶ {dur}</span>
+      </div>
+      <div>
+        <div style="font:800 18px/1.2 'Inter',system-ui,sans-serif;color:#2B2118">{s.get('title','')}</div>
+        <div style="font:500 14px/1.4 'Inter',system-ui,sans-serif;color:#6B5E4F;margin-top:3px">{s.get('topic','')} &nbsp;·&nbsp; {yt}</div>
+      </div>
+    </a>"""
+    return f"""<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DailyShorts — 60-second diabetic-life wins · LocalDiabetic</title>
+<meta name="description" content="LocalDiabetic DailyShorts: 60-second, brand-warm explainers on living with diabetes — know your numbers, look at your feet, win big. Education, not medical advice.">
+<link rel="icon" href="/assets/bee.svg" type="image/svg+xml">
+<link rel="canonical" href="{SITE}/dailylocal/shorts">
+<meta property="og:title" content="LocalDiabetic DailyShorts"><meta property="og:url" content="{SITE}/dailylocal/shorts">
+<meta property="og:description" content="60-second diabetic-life wins. Win big. 🐝"><meta property="og:image" content="{SITE}/assets/og.png">
+<link rel="stylesheet" href="/style.css">
+</head><body>
+<header class="nav">
+  <a class="brand" href="/"><span class="bee" aria-hidden="true">🐝</span><span>Local<b>Diabetic</b></span></a>
+  <nav><a href="/dailylocal">The DailyLocal</a><a class="btn" href="{YOUTUBE}" target="_blank" rel="noopener">▶ YouTube</a></nav>
+</header>
+<section class="hero" style="padding:54px 0 26px"><div class="wrap">
+  <h1>DailyShorts</h1>
+  <p class="lede">60-second diabetic-life wins — know your numbers, look at your feet, carry the day.
+    <b>Win big.</b> Watch &amp; subscribe on <a href="{YOUTUBE}" target="_blank" rel="noopener">YouTube</a>.</p>
+</div></section>
+<section class="section"><div class="wrap">
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:30px">{cards}</div>
+</div></section>
+<footer class="footer"><div class="wrap">
+  <p class="links"><a href="/">Home</a> · <a href="/dailylocal">The DailyLocal</a> · <a href="{YOUTUBE}" target="_blank" rel="noopener">YouTube</a> · <a href="/about">About</a></p>
+  <p class="motto">The good stuff, no noise. 🐝</p>
+  <p class="legal">© 2026 Swarm and Bee LLC · build@localdiabetic.com · General education, not medical advice.</p>
+</div></footer>
+</body></html>"""
+
+
 def page(meta, body, shorts=None):
     title, slug = meta.get("title", "DailyLocal"), meta["slug"]
     desc = first_sentence(body)
@@ -186,7 +239,7 @@ def page(meta, body, shorts=None):
 </head><body>
 <header class="nav">
   <a class="brand" href="/"><span class="bee" aria-hidden="true">🐝</span><span>Local<b>Diabetic</b></span></a>
-  <nav><a href="/dailylocal">← The DailyLocal</a><a class="btn" href="/#news">Subscribe</a></nav>
+  <nav><a href="/dailylocal">← The DailyLocal</a><a href="/dailylocal/shorts">Shorts</a><a class="btn" href="/#news">Subscribe</a></nav>
 </header>
 <article class="post">
   <p class="eyebrow">🐝 The DailyLocal{f' · {date}' if date else ''}</p>
@@ -239,7 +292,7 @@ def archive(items):
 </head><body>
 <header class="nav">
   <a class="brand" href="/"><span class="bee" aria-hidden="true">🐝</span><span>Local<b>Diabetic</b></span></a>
-  <nav><a href="/">Home</a><a href="/about">About Donovan</a><a class="btn" href="/#news">Subscribe</a></nav>
+  <nav><a href="/">Home</a><a href="/dailylocal/shorts">Shorts</a><a href="/about">About Donovan</a><a class="btn" href="/#news">Subscribe</a></nav>
 </header>
 <section class="hero" style="padding:54px 0 30px">
   <div class="wrap">
@@ -275,6 +328,9 @@ def main():
         items.append(meta)
     items.sort(key=lambda m: m.get("date", ""), reverse=True)
     open(f"{OUT}/index.html", "w", encoding="utf-8").write(archive(items))
+    if shorts:
+        open(f"{OUT}/shorts.html", "w", encoding="utf-8").write(shorts_hub(shorts, items))
+        print(f"  🎬 DailyShorts hub → {OUT}/shorts.html ({len(shorts)} short(s))")
     print(f"  published {len(items)} issues → {OUT}/ + archive")
     for m in items:
         print(f"    /dailylocal/{m['slug']}  ·  {m.get('title')}")
