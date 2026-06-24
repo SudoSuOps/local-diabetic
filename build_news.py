@@ -7,11 +7,44 @@ One piece of writing → a permanent, searchable web page. Run this after writin
 It generates dailylocal/<slug>.html for each issue + dailylocal/index.html (the archive).
 Stdlib only. The welcome (000) and README are skipped — those aren't public articles.
 """
-import os, re, glob
+import os, re, glob, json
 
 SRC = "newsletter"
 OUT = "dailylocal"
 SITE = "https://localdiabetic.com"
+SHORTS_DB = "dailyshorts/shorts.json"   # DailyShorts registry (pin by slug from issue frontmatter)
+
+
+def load_shorts():
+    """Registry of rendered DailyShorts, keyed by slug. {} if none yet."""
+    if not os.path.exists(SHORTS_DB):
+        return {}
+    return {s["slug"]: s for s in json.load(open(SHORTS_DB, encoding="utf-8"))}
+
+
+def mmss(sec):
+    sec = int(sec or 0)
+    return f"{sec // 60}:{sec % 60:02d}"
+
+
+def short_player(s):
+    """The pinned DailyShort — a vertical 9:16 player at the top of a web issue.
+    Muted + playsinline by default (autoplay-safe); on-screen text/captions carry it."""
+    dur = mmss(s.get("durationSec", 65))
+    cap = f'<track kind="captions" src="{s["captionsUrl"]}" srclang="en" label="English" default>' if s.get("captionsUrl") else ""
+    return f"""<figure class="dailyshort" style="margin:0 0 40px;display:flex;flex-direction:column;align-items:center;gap:14px">
+  <div style="position:relative;width:100%;max-width:340px;aspect-ratio:9/16;max-height:78vh;border-radius:22px;overflow:hidden;background:#0B0F14;border:1px solid #ECE3D2;box-shadow:0 30px 60px -40px rgba(43,33,24,.45)">
+    <video style="width:100%;height:100%;object-fit:cover;display:block" playsinline muted controls preload="none"
+      poster="{s['posterUrl']}" width="1080" height="1920">
+      <source src="{s['videoUrl']}" type="video/mp4">{cap}
+    </video>
+  </div>
+  <figcaption style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:center;font:600 14px/1.4 'Inter',system-ui,sans-serif;color:#6B5E4F">
+    <span style="background:#F2B441;color:#1a1205;font-weight:800;border-radius:999px;padding:5px 12px;font-size:12.5px">▶ Today&rsquo;s Short</span>
+    <b style="color:#2B2118">{s.get('title','')}</b>
+    <span style="color:#9B8D7B">· {s.get('topic','')} · {dur}</span>
+  </figcaption>
+</figure>"""
 
 
 def parse(path):
@@ -70,12 +103,15 @@ def first_sentence(body):
     return (txt[:155] + "…") if len(txt) > 156 else txt
 
 
-def page(meta, body):
+def page(meta, body, shorts=None):
     title, slug = meta.get("title", "DailyLocal"), meta["slug"]
     desc = first_sentence(body)
     date = meta.get("date", "")
     src = meta.get("source", "")
     src_html = f'<p class="source">Sources: {inline(src)}</p>' if src else ""
+    # pinned DailyShort (frontmatter: pinned_short: <slug>)
+    pin = (shorts or {}).get(meta.get("pinned_short", ""))
+    pin_html = short_player(pin) if pin else ""
     return f"""<!doctype html>
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -105,6 +141,7 @@ def page(meta, body):
 <article class="post">
   <p class="eyebrow">🐝 The DailyLocal{f' · {date}' if date else ''}</p>
   <h1>{title}</h1>
+  {pin_html}
   {body_html(body)}
   <p class="signoff">— Donovan<br>Building one day at a time 🐝</p>
   {src_html}
@@ -175,13 +212,16 @@ def archive(items):
 
 def main():
     os.makedirs(OUT, exist_ok=True)
+    shorts = load_shorts()
     items = []
     for path in sorted(glob.glob(f"{SRC}/*.md")):
         name = os.path.basename(path)
         if name == "README.md" or name.startswith("000"):
             continue
         meta, body = parse(path)
-        open(f"{OUT}/{meta['slug']}.html", "w", encoding="utf-8").write(page(meta, body))
+        open(f"{OUT}/{meta['slug']}.html", "w", encoding="utf-8").write(page(meta, body, shorts))
+        if meta.get("pinned_short") in shorts:
+            print(f"    📌 pinned Short '{meta['pinned_short']}' → {meta['slug']}")
         items.append(meta)
     items.sort(key=lambda m: m.get("date", ""), reverse=True)
     open(f"{OUT}/index.html", "w", encoding="utf-8").write(archive(items))
