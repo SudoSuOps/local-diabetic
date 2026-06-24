@@ -90,14 +90,14 @@
         <span style="width:9px;height:9px;border-radius:50%;background:#2FB67A;"></span>
         <span style="font-size:13px;font-weight:600;color:#6b5e4f;">DiabeticDaily · running on your box · offline</span>
       </div>
-      <div style="padding:24px 22px;display:flex;flex-direction:column;gap:16px;">
+      <div id="ld-chat-msgs" style="padding:24px 22px;display:flex;flex-direction:column;gap:16px;max-height:440px;overflow-y:auto;">
         <div style="align-self:flex-end;max-width:80%;background:#FBF0D8;border:1px solid #F0DCA8;border-radius:16px 16px 4px 16px;padding:14px 16px;font-size:15.5px;line-height:1.55;color:#2B2118;">My A1C came back 6.9%. Is that okay?</div>
         <div style="align-self:flex-start;max-width:86%;background:#FBF7EF;border:1px solid #ece3d2;border-radius:16px 16px 16px 4px;padding:14px 16px;font-size:15.5px;line-height:1.6;color:#2B2118;">A 6.9% A1C is an estimate of your average glucose over about three months — roughly 151 mg/dL. For many adults with diabetes that’s near a common target, and yours is <strong style="font-weight:700;">down from 7.4%</strong>, which is real progress. The trend matters more than any single number. Want me to prep a couple of questions to bring to Dr. Greene?</div>
         <div style="align-self:flex-start;font-size:12.5px;color:#9b8d7b;padding-left:4px;">Explains and organizes — not medical advice. For changes to your care, talk with your clinician.</div>
       </div>
       <div style="display:flex;gap:10px;padding:16px 22px;border-top:1px solid #f0e8d8;background:#FBF7EF;">
-        <input type="text" placeholder="Ask the brain anything…" style="flex:1;font-family:inherit;font-size:15px;color:#2B2118;background:#fff;border:1px solid #ece3d2;border-radius:11px;padding:12px 14px;">
-        <button type="button" style="background:#F2B441;color:#1a1205;font-weight:800;font-size:15px;font-family:inherit;border:none;border-radius:11px;padding:12px 20px;cursor:pointer;" data-h="background:#e9aa31;">Send</button>
+        <input type="text" id="ld-chat-input" placeholder="Ask the brain anything…" style="flex:1;font-family:inherit;font-size:15px;color:#2B2118;background:#fff;border:1px solid #ece3d2;border-radius:11px;padding:12px 14px;">
+        <button type="button" style="background:#F2B441;color:#1a1205;font-weight:800;font-size:15px;font-family:inherit;border:none;border-radius:11px;padding:12px 20px;cursor:pointer;" id="ld-chat-send" data-h="background:#e9aa31;">Send</button>
       </div>
     </div>
     <p style="text-align:center;font-size:13px;color:#9b8d7b;margin:14px 0 0;">An example exchange — your real conversations stay on your box.</p>
@@ -226,6 +226,38 @@
       }catch(_){ btn.textContent=label; btn.disabled=false; }
     });
   });
+})();
+</script>
+<script>
+(function(){
+  var input=document.getElementById('ld-chat-input'), send=document.getElementById('ld-chat-send'), msgs=document.getElementById('ld-chat-msgs');
+  if(!input||!send||!msgs) return;
+  var EP="https://try.localdiabetic.com/v1/chat/completions", history=[], busy=false;
+  function bubble(who,txt){
+    var d=document.createElement('div');
+    d.setAttribute('style', who==='u'
+      ? 'align-self:flex-end;max-width:80%;background:#FBF0D8;border:1px solid #F0DCA8;border-radius:16px 16px 4px 16px;padding:14px 16px;font-size:15.5px;line-height:1.55;color:#2B2118;white-space:pre-wrap;'
+      : 'align-self:flex-start;max-width:86%;background:#FBF7EF;border:1px solid #ece3d2;border-radius:16px 16px 16px 4px;padding:14px 16px;font-size:15.5px;line-height:1.55;color:#2B2118;white-space:pre-wrap;');
+    d.textContent=txt; msgs.appendChild(d); msgs.scrollTop=msgs.scrollHeight; return d;
+  }
+  async function ask(){
+    var q=input.value.trim(); if(!q||busy) return;
+    busy=true; send.disabled=true; input.value='';
+    bubble('u',q); history.push({role:'user',content:q});
+    var a=bubble('a','…'), acc='';
+    try{
+      var res=await fetch(EP,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'diabetic-daily',messages:history.slice(-8),stream:true,max_tokens:700})});
+      if(!res.ok||!res.body) throw 0;
+      var rd=res.body.getReader(), dec=new TextDecoder(), buf='';
+      while(true){ var r=await rd.read(); if(r.done) break; buf+=dec.decode(r.value,{stream:true});
+        var lines=buf.split('\n'); buf=lines.pop();
+        for(var i=0;i<lines.length;i++){ var t=lines[i].trim(); if(t.indexOf('data:')!==0) continue; var d=t.slice(5).trim(); if(d==='[DONE]'||!d) continue; try{ var c=JSON.parse(d).choices[0].delta.content; if(c){ acc+=c; a.textContent=acc; msgs.scrollTop=msgs.scrollHeight; } }catch(e){} } }
+      a.textContent=acc||'Sorry — I didn\u2019t catch that. Try again?'; history.push({role:'assistant',content:acc});
+    }catch(e){ a.textContent='Couldn\u2019t reach the demo just now \u2014 it runs on a single little box, so it may be busy. Please try again in a moment.'; }
+    busy=false; send.disabled=false; input.focus();
+  }
+  send.addEventListener('click',ask);
+  input.addEventListener('keydown',function(e){ if(e.key==='Enter'){ e.preventDefault(); ask(); } });
 })();
 </script>
 </body>
