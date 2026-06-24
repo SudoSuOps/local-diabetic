@@ -34,5 +34,16 @@
     "captionsUrl": "/assets/shorts/heat-hits-us-harder.vtt",
     "publishedAt": "2026-06-24",
     "youtubeUrl": "https://www.youtube.com/shorts/Ew9cdXtsqXA"
+  },
+  {
+    "id": "eat-to-win",
+    "slug": "eat-to-win",
+    "title": "Eat to Win",
+    "topic": "The plate method",
+    "videoUrl": "/assets/shorts/eat-to-win.mp4?v=1",
+    "posterUrl": "/assets/shorts/eat-to-win-poster.jpg",
+    "durationSec": 65,
+    "captionsUrl": "/assets/shorts/eat-to-win.vtt",
+    "publishedAt": "2026-06-24"
   }
 ]
