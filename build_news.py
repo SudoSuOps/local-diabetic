@@ -117,8 +117,9 @@ def share_bar(s, slug):
             "&body=" + up.quote(f"A 60-second LocalDiabetic Short — {title}.\n\nWatch it: {url}\n\nKnow your numbers. Win big. 🐝"))
     pill = ("text-decoration:none;display:inline-flex;align-items:center;gap:8px;font:700 14px/1 'Inter',system-ui,sans-serif;"
             "color:#2B2118;background:#fff;border:1px solid #ECE3D2;border-radius:999px;padding:11px 18px;cursor:pointer")
-    yt = (f'<a style="{pill}" href="{YOUTUBE}" target="_blank" rel="noopener" aria-label="LocalDiabetic on YouTube">▶ YouTube</a>'
-          if YOUTUBE else "")
+    yt_url = s.get("youtubeUrl") or YOUTUBE  # link the actual Short when uploaded, else the channel
+    yt = (f'<a style="{pill}" href="{yt_url}" target="_blank" rel="noopener" aria-label="Watch on YouTube">▶ Watch on YouTube</a>'
+          if yt_url else "")
     return f"""<div class="ds-share" style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:0 0 40px">
   <a style="{pill}" href="{x_url}" target="_blank" rel="noopener">𝕏 &nbsp;Post on X</a>
   <a style="{pill}" href="{mail}">✉ &nbsp;Forward to a friend</a>
