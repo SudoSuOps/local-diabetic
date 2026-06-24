@@ -128,6 +128,29 @@ def share_bar(s, slug):
 </div>"""
 
 
+def video_schema(s):
+    """schema.org VideoObject so search/AI engines surface the pinned Short."""
+    sec = int(s.get("durationSec", 65))
+    yt = s.get("youtubeUrl", "")
+    vid = yt.rstrip("/").split("/")[-1].split("?")[0] if "youtube" in yt else ""
+    obj = {
+        "@context": "https://schema.org", "@type": "VideoObject",
+        "name": s.get("title", ""),
+        "description": f"{s.get('title','')} — {s.get('topic','')}. A 60-second LocalDiabetic Short: "
+                       "what A1C and time in range mean, why your number is yours, and three small moves. "
+                       "Education, not medical advice.",
+        "thumbnailUrl": [SITE + s["posterUrl"]],
+        "uploadDate": s.get("publishedAt", ""),
+        "duration": f"PT{sec // 60}M{sec % 60}S",
+        "contentUrl": SITE + s["videoUrl"].split("?")[0],
+        "publisher": {"@type": "Organization", "name": "LocalDiabetic", "url": SITE,
+                      "logo": {"@type": "ImageObject", "url": SITE + "/assets/bee.svg"}},
+    }
+    if vid:
+        obj["embedUrl"] = f"https://www.youtube.com/embed/{vid}"
+    return '<script type="application/ld+json">' + json.dumps(obj) + '</script>'
+
+
 def page(meta, body, shorts=None):
     title, slug = meta.get("title", "DailyLocal"), meta["slug"]
     desc = first_sentence(body)
@@ -137,6 +160,7 @@ def page(meta, body, shorts=None):
     # pinned DailyShort (frontmatter: pinned_short: <slug>)
     pin = (shorts or {}).get(meta.get("pinned_short", ""))
     pin_html = (short_player(pin) + share_bar(pin, slug)) if pin else ""
+    video_ld = video_schema(pin) if pin else ""
     return f"""<!doctype html>
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -157,6 +181,7 @@ def page(meta, body, shorts=None):
 "publisher":{{"@type":"Organization","name":"LocalDiabetic","url":"{SITE}"}},
 "mainEntityOfPage":"{SITE}/dailylocal/{slug}","isAccessibleForFree":true}}
 </script>
+{video_ld}
 <link rel="stylesheet" href="/style.css">
 </head><body>
 <header class="nav">
