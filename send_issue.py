@@ -14,11 +14,29 @@ import build_news as bn
 ENDPOINT = "https://localdiabetic.com/api/send"
 
 
-def email_html(body):
+def email_short(meta):
+    """Pinned-Short poster in email: clients can't play inline video, so we send a
+    linked poster image (with a play CTA) that deep-links to the web issue's player."""
+    s = bn.load_shorts().get(meta.get("pinned_short", ""))
+    if not s:
+        return ""
+    issue_url = f"{bn.SITE}/dailylocal/{meta['slug']}"
+    poster = bn.SITE + s["posterUrl"]
+    dur = bn.mmss(s.get("durationSec", 65))
+    return (f'<a href="{issue_url}" style="text-decoration:none;display:block;margin:0 0 24px;text-align:center">'
+            f'<img src="{poster}" width="260" alt="{s.get("title","")}" '
+            f'style="display:block;margin:0 auto;width:260px;max-width:100%;border-radius:18px;border:1px solid #ECE3D2"/>'
+            f'<span style="display:inline-block;margin-top:12px;background:#F2B441;color:#1a1205;font-weight:800;'
+            f'border-radius:999px;padding:8px 18px;font-size:14px">&#9654; Watch today&rsquo;s Short &middot; {dur}</span>'
+            f'</a>')
+
+
+def email_html(meta, body):
     inner = bn.body_html(body)
     return ('<div style="font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;'
             'max-width:560px;margin:0 auto;color:#2B2118;line-height:1.65;font-size:16px">'
             '<p style="font-size:20px;font-weight:800;color:#D99A2B;margin:0 0 14px">🐝 The DailyLocal</p>'
+            f'{email_short(meta)}'
             f'{inner}'
             '<p style="margin-top:30px;color:#5b4f41;font-size:15px;line-height:1.55">— Donovan<br>'
             '<span style="color:#8a7d6c">Building one day at a time 🐝</span></p>'
@@ -44,7 +62,7 @@ def main():
     payload = {
         "secret": secret,
         "subject": meta.get("subject") or meta.get("title", "The DailyLocal"),
-        "html": email_html(body),
+        "html": email_html(meta, body),
         "text": email_text(body),
         "dryRun": dry,
     }
