@@ -3,6 +3,7 @@ issue: 003
 title: Heat hits us harder
 subject: "Heat hits us harder 🐝"
 date: 2026-06-23
+pinned_short: summer-hydration
 status: ready to send
 source: ADA "Managing Diabetes in the Heat" (people with diabetes are more sensitive to high temperatures; dehydration can raise blood glucose; store insulin and supplies out of heat) · NIDDK (high blood glucose increases urination and fluid loss)
 ---

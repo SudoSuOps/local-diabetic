@@ -227,7 +227,7 @@ def page(meta, body, shorts=None):
 <meta property="og:description" content="{desc}">
 <meta property="og:url" content="{SITE}/dailylocal/{slug}">
 <meta property="og:image" content="{SITE}/assets/og.png">
-<meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@opendiabetics">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@localdiabetics">
 <script type="application/ld+json">
 {{"@context":"https://schema.org","@type":"Article","headline":{title!r},
 "datePublished":"{date}","author":{{"@type":"Person","name":"Donovan Mackey","description":"Type 1 diabetic, building LocalDiabetic"}},

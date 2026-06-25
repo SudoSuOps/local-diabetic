@@ -3,6 +3,7 @@ issue: 001
 title: Diabetic foot care starts with one small daily habit
 subject: "One small habit that saves toes 🐝"
 date: 2026-06-22
+pinned_short: foot-care
 status: ready to send
 source: NIDDK "Diabetes & Foot Problems" · ADA foot-care basics · IWGDF prevention guidance
 ---
