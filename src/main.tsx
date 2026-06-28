@@ -25,6 +25,15 @@ const roadmap = [
   ['90 days', 'Local node beta, 50 users supported, 25 packs delivered, 10 vendors vetted, 10 volunteers onboarded, impact report.'],
 ]
 
+const shorts: [string, string][] = [
+  ['know-your-numbers', 'Know Your Numbers'],
+  ['look-at-your-feet', 'Look at Your Feet'],
+  ['heat-hits-us-harder', 'Heat Hits Us Harder'],
+  ['daily-movement', 'Daily Movement'],
+  ['ownership-win', 'The Ownership Win'],
+  ['diabetes-vault', 'The Diabetes Vault'],
+]
+
 function App() {
   return (
     <div className="min-h-screen bg-[#f8fbf7] text-slate-950">
@@ -36,6 +45,8 @@ function App() {
             <span className="text-xl">Local<span className="text-[#b98211]">Diabetics</span></span>
           </a>
           <div className="hidden items-center gap-5 text-sm font-bold text-slate-700 lg:flex">
+            <a href="#why" className="hover:text-[#0f766e]">Why</a>
+            <a href="#shorts" className="hover:text-[#0f766e]">Shorts</a>
             <a href="#get-help" className="hover:text-[#0f766e]">Get help</a>
             <a href="#care-packs" className="hover:text-[#0f766e]">Care packs</a>
             <a href="#vendors" className="hover:text-[#0f766e]">Vendors</a>
@@ -79,6 +90,43 @@ function App() {
                 </div>
                 <p className="mt-6 rounded-2xl bg-white/8 p-4 text-sm leading-6 text-white/78">LocalDiabetic coordinates non-medical support. It does not diagnose, treat, dose medication, or triage emergencies.</p>
               </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="why" className="bg-[#073f3b] px-5 py-16 text-white sm:px-8 lg:py-24">
+          <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1fr_.85fr] lg:items-center">
+            <div>
+              <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#f2b632]">Why I built this</p>
+              <h2 className="mt-3 text-3xl font-black tracking-tight sm:text-4xl lg:text-5xl">I live this disease. We own the machines.</h2>
+              <div className="mt-6 space-y-4 text-lg leading-8 text-white/80">
+                <p>I didn&rsquo;t build LocalDiabetic from a market study. I built it from the 2&nbsp;a.m. glucose climbs, the sore spot you catch a day too late, and the stack of collection letters that lands when you&rsquo;re already exhausted. Type&nbsp;1, Addison&rsquo;s, thyroid &mdash; the complications, a toe I lost, more than ten medical collections, an identity stolen. I&rsquo;ve lived every fire this thing fights.</p>
+                <p>And it runs on machines I own. Your foot photos, your numbers, your records live on a box in your home &mdash; not someone&rsquo;s cloud. No data harvesting. No monthly app holding your life hostage.</p>
+                <p>That&rsquo;s the whole thing: a calm, local-first board that helps you take the next right step &mdash; feet, meds, glucose, appointments, paperwork &mdash; and never lets your life leave home. Built by someone who needed it.</p>
+              </div>
+              <p className="mt-6 font-black text-[#f7d37a]">&mdash; Donovan Mackey, founder &middot; LocalDiabetic</p>
+            </div>
+            <div className="rounded-[2rem] border border-white/12 bg-white/5 p-3 shadow-2xl shadow-teal-950/30">
+              <video className="w-full rounded-[1.5rem] bg-black" controls preload="metadata" poster="/media/win-big-poster.jpg"><source src="/media/win-big.mp4" type="video/mp4" />Your browser does not support video.</video>
+              <p className="px-2 pb-1 pt-3 text-center text-sm font-bold text-white/70">Win Big &mdash; the daily mission</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="shorts" className="bg-[#f8fbf7] px-5 py-16 text-slate-950 sm:px-8 lg:py-24">
+          <div className="mx-auto max-w-7xl">
+            <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#b98211]">DailyShorts</p>
+            <h2 className="mt-3 max-w-4xl text-3xl font-black tracking-tight sm:text-4xl lg:text-5xl">Win the day &mdash; one short at a time.</h2>
+            <p className="mt-5 max-w-4xl text-lg leading-8 text-slate-700">Short, warm, practical videos for real diabetic life &mdash; your numbers, your feet, the heat, daily movement, ownership, and your local vault. Education and encouragement, never medical advice.</p>
+            <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              {shorts.map(([file, title]) => (
+                <article key={file} className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
+                  <div className="aspect-[9/16] bg-black">
+                    <video className="h-full w-full object-contain" controls preload="metadata" poster={`/media/${file}-poster.jpg`}><source src={`/media/${file}.mp4`} type="video/mp4" />Your browser does not support video.</video>
+                  </div>
+                  <h3 className="px-5 py-4 text-lg font-black">{title}</h3>
+                </article>
+              ))}
             </div>
           </div>
         </section>
