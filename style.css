@@ -96,7 +96,7 @@ h2{font-size:clamp(28px,4.2vw,42px);font-weight:800;margin:0 0 10px;text-align:c
 .contact-form button:hover{background:var(--honey-600)}
 .contact-form button:disabled{opacity:.6;cursor:default}
 .formnote{min-height:22px;font-weight:700;margin:2px 0 0;text-align:center}
-.formnote.ok{color:#1f8f5f} .formnote.bad{color:#c0413e}
+.formnote.ok{color:#1f8f5d} .formnote.bad{color:#c0413e}
 @media(max-width:560px){.contact-form .row{grid-template-columns:1fr}}
 
 /* footer */
@@ -128,7 +128,7 @@ h2{font-size:clamp(28px,4.2vw,42px);font-weight:800;margin:0 0 10px;text-align:c
 .section.dark .line{color:#c8d6e3}
 .src{font-size:14.5px}
 .center{text-align:center}
-.live{display:inline-block;background:rgba(47,182,122,.16);color:#1f8f5f;border:1px solid rgba(47,182,122,.4);
+.live{display:inline-block;background:rgba(47,182,122,.16);color:#1f8f5d;border:1px solid rgba(47,182,122,.4);
   font-size:12px;font-weight:800;padding:1px 8px;border-radius:999px;vertical-align:middle;margin-left:4px}
 .disc{color:#8a7d6c;font-size:13.5px;max-width:640px;margin:14px auto 0}
 
